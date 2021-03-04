@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-import 'constants.dart';
+import 'screens/details/details_screen.dart';
+import 'utilities/constants.dart';
+
+import 'screens/home/home_screen.dart';
+import 'utilities/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,51 +16,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        textTheme: TextTheme(
+          body1: TextStyle(color: ksecondaryColor),
+          body2: TextStyle(color: ksecondaryColor),
+        ),
+      ),
+      initialRoute: DetailsScreen.routeName, //HomeScreen.routeName,
+      routes: routes,
     );
   }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: homeAppBar(),
-      body: Container(),
-    );
-  }
-
-  AppBar homeAppBar(BuildContext context) {
-  return AppBar(
-    backgroundColor: Colors.white,
-    elevation: 0,
-    leading: IconButton(
-      icon: SvgPicture.asset("assets/icons/menu.svg"),
-      onPressed: () {},
-    ),
-    title: RichText(
-      text: TextSpan(
-        style: Theme.of(context)
-            .textTheme
-            .title
-            .copyWith(fontWeight: FontWeight.bold),
-        children: [
-          TextSpan(
-            text: "Punk",
-            style: TextStyle(color: ksecondaryColor),
-          ),
-          TextSpan(
-            text: "Food",
-            style: TextStyle(color: kPrimaryColor),
-          ),
-        ],
-      ),
-    ),
-    actions: <Widget>[
-      IconButton(
-        icon: SvgPicture.asset("assets/icons/notification.svg"),
-        onPressed: () {},
-      ),
-    ],
-  );
 }

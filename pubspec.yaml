@@ -15,12 +15,14 @@ dependencies:
 
 
   cupertino_icons: ^1.0.0
-  flutter_svg: ^0.17.4
-  smooth_star_rating: ^1.0.4
+  flutter_svg: ^0.19.3
+  smooth_star_rating: ^1.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter:
 
   uses-material-design: true
 
