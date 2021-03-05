@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
+import 'package:pizza_eshop_flutterapp/screens/details/details_screen.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
@@ -56,7 +57,6 @@ class ItemDetailsCard extends StatelessWidget {
     return Column(
       children: [
         Container(
-         
           height: 150,
           color: Colors.grey.withOpacity(0),
           child: Row(
@@ -64,7 +64,10 @@ class ItemDetailsCard extends StatelessWidget {
               Container(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(pizzaMap.image),
+                  child: Hero(
+                    tag: pizzaMap.title,
+                    child: Image.asset(pizzaMap.image),
+                  ),
                 ),
               ),
               Container(
@@ -120,17 +123,27 @@ class ItemDetailsCard extends StatelessWidget {
                           style: kSmallTitleTextStyle,
                         ),
                         addVerticalSpace(35),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetailsScreen(pizzaMap: pizzaMap)),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                              border: Border.all(color: kSecondaryColor),
+                              shape: BoxShape.rectangle,
                             ),
-                            border: Border.all(color: ksecondaryColor),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Icon(Icons.add),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Icon(Icons.add),
+                            ),
                           ),
                         )
                       ],

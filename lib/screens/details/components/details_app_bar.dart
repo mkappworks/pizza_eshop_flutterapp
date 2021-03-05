@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
-class HomeAppBar extends StatelessWidget {
+class DetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          icon: SvgPicture.asset("assets/icons/menu.svg"),
-          onPressed: () {},
+          icon: SvgPicture.asset(
+            "assets/icons/home.svg",
+            color: kSecondaryColor,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         RichText(
           text: TextSpan(
@@ -35,9 +40,7 @@ class HomeAppBar extends StatelessWidget {
           child: Container(
             width: 35,
             decoration: BoxDecoration(shape: BoxShape.circle),
-            child: ClipOval(
-              child: Image.asset('assets/images/person.png'),
-            ),
+            child: ClipOval(),
             // onPressed: () {},
           ),
         ),

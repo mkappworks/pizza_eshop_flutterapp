@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
 import 'package:pizza_eshop_flutterapp/screens/home/components/main_title.dart';
 import 'package:pizza_eshop_flutterapp/screens/home/components/sub_title.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
@@ -8,6 +9,10 @@ import 'order_button.dart';
 import 'title_price_rating.dart';
 
 class ItemInfo extends StatelessWidget {
+  final PizzaMap pizzaMap;
+
+  ItemInfo({@required this.pizzaMap});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,27 +31,44 @@ class ItemInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MainTitle(title: 'Margherita'),
+            MainTitle(title: pizzaMap.title),
             addVerticalSpace(10),
-            SubTitle(subtitle: '540 gr . 3300 kcal'),
-            addVerticalSpace(size.height * 0.05),
+            SubTitle(
+                subtitle:
+                    '${pizzaMap.mediumWeight} | ${pizzaMap.mediumCalorie}'),
+            addVerticalSpace(size.height * 0.02),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                     decoration: BoxDecoration(
-                        border: Border.all(color: ksecondaryColor)),
-                    child: Row(
-                      children: [
-                        Icon(Icons.straighten_outlined),
-                        Text('1', style: kLargeTitleTextStyle),
-                        Icon(Icons.add),
-                      ],
+                        border: Border.all(color: kSecondaryColor),
+                        borderRadius: BorderRadius.circular(8.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          QuantityIconButton(
+                            onPress: () {},
+                            icon: Icons.remove,
+                          ),
+                          addHorizontalSpace(15.0),
+                          Text('1', style: kLargeTitleTextStyle),
+                          addHorizontalSpace(15.0),
+                          QuantityIconButton(
+                            onPress: () {},
+                            icon: Icons.add,
+                          ),
+                        ],
+                      ),
                     )),
                 Container(
-                  child: Text('LKR1200.00', style: kLargeTitleTextStyle),
+                  child: Text('\$${pizzaMap.mediumPrice}',
+                      style: kLargeTitleTextStyle),
                 )
               ],
             ),
+            addVerticalSpace(size.height * 0.02),
             OrderButton(
               size: size,
               press: () {},
@@ -54,6 +76,24 @@ class ItemInfo extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class QuantityIconButton extends StatelessWidget {
+  final IconData icon;
+  final Function onPress;
+
+  QuantityIconButton({
+    @required this.icon,
+    @required this.onPress,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPress,
+      child: Icon(icon),
     );
   }
 }

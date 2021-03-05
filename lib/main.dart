@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         textTheme: TextTheme(
-          body1: TextStyle(color: ksecondaryColor),
-          body2: TextStyle(color: ksecondaryColor),
+          body1: TextStyle(color: kSecondaryColor),
+          body2: TextStyle(color: kSecondaryColor),
         ),
       ),
       initialRoute: HomeScreen.routeName,
