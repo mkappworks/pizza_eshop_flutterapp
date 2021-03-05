@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           body2: TextStyle(color: ksecondaryColor),
         ),
       ),
-      initialRoute: DetailsScreen.routeName, //HomeScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: routes,
     );
   }

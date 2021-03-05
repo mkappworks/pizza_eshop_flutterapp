@@ -6,8 +6,10 @@ class PizzaMap {
   final String image;
   final String mediumWeight;
   final String mediumCalorie;
+  final double mediumPrice;
   final String largeWeight;
   final String largeCalorie;
+  final double largePrice;
 
   PizzaMap({
     @required this.title,
@@ -15,8 +17,10 @@ class PizzaMap {
     @required this.image,
     @required this.mediumWeight,
     @required this.mediumCalorie,
+    @required this.mediumPrice,
     @required this.largeWeight,
     @required this.largeCalorie,
+    @required this.largePrice,
   });
 
   factory PizzaMap.fromJson(Map<String, dynamic> json) {
@@ -24,10 +28,12 @@ class PizzaMap {
       title: json['title'],
       description: json['description'],
       image: json['image'],
-      mediumWeight: json['mediumWeight'],
-      mediumCalorie: json['mediumCalorie'],
-      largeWeight: json['largeWeight'],
-      largeCalorie: json['largeCalorie'],
+      mediumWeight: json['mediumweight'],
+      mediumCalorie: json['mediumcalorie'],
+      mediumPrice: json['mediumprice'],
+      largeWeight: json['largeweight'],
+      largeCalorie: json['largecalorie'],
+      largePrice: json['largeprice'],
     );
   }
 }

@@ -4,26 +4,64 @@
     "description": "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. Pepperoni is characteristically soft, slightly smoky, and bright red in color",
     "image": "assets/images/pizza1.png",
     "mediumweight": "500gr",
-    "mediumcalorie":"3000kcal",
+    "mediumcalorie": "3000kcal",
+    "mediumprice": 5.00,
     "largeweight": "1000gr",
-    "largecalorie":"6000kcal"
+    "largecalorie": "6000kcal",
+    "largeprice": 10.00
   },
   {
     "title": "4 Cheese",
     "description": "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. Pepperoni is characteristically soft, slightly smoky, and bright red in color",
     "image": "assets/images/pizza2.png",
     "mediumweight": "500gr",
-    "mediumcalorie":"3000kcal",
+    "mediumcalorie": "3000kcal",
+    "mediumprice": 6.00,
     "largeweight": "1000gr",
-    "largecalorie":"6000kcal"
+    "largecalorie": "6000kcal",
+    "largeprice": 12.00
   },
   {
     "title": "Margherita",
     "description": "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
     "image": "assets/images/pizza3.png",
     "mediumweight": "500gr",
-    "mediumcalorie":"3000kcal",
+    "mediumcalorie": "3000kcal",
+    "mediumprice": 7.00,
     "largeweight": "1000gr",
-    "largecalorie":"6000kcal"
+    "largecalorie": "6000kcal",
+    "largeprice": 14.00
+  },
+  {
+    "title": "Pizza 4",
+    "description": "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. Pepperoni is characteristically soft, slightly smoky, and bright red in color",
+    "image": "assets/images/pizza1.png",
+    "mediumweight": "500gr",
+    "mediumcalorie": "3000kcal",
+    "mediumprice": 7.50,
+    "largeweight": "1000gr",
+    "largecalorie": "6000kcal",
+    "largeprice": 13.00
+  },
+  {
+    "title": "Pizza 5",
+    "description": "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. Pepperoni is characteristically soft, slightly smoky, and bright red in color",
+    "image": "assets/images/pizza2.png",
+    "mediumweight": "500gr",
+    "mediumcalorie": "3000kcal",
+    "mediumprice": 6.00,
+    "largeweight": "1000gr",
+    "largecalorie": "6000kcal",
+    "largeprice": 12.00
+  },
+  {
+    "title": "Pizza 6",
+    "description": "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
+    "image": "assets/images/pizza3.png",
+    "mediumweight": "500gr",
+    "mediumprice": 8.00,
+    "largeweight": "1000gr",
+    "largecalorie": "6000kcal",
+    "largeprice": 16.00
   }
 ]

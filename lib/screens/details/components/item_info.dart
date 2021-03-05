@@ -38,12 +38,12 @@ class ItemInfo extends StatelessWidget {
                     child: Row(
                       children: [
                         Icon(Icons.straighten_outlined),
-                        Text('1', style: kTitleTextStyle),
+                        Text('1', style: kLargeTitleTextStyle),
                         Icon(Icons.add),
                       ],
                     )),
                 Container(
-                  child: Text('LKR1200.00', style: kTitleTextStyle),
+                  child: Text('LKR1200.00', style: kLargeTitleTextStyle),
                 )
               ],
             ),
@@ -54,19 +54,6 @@ class ItemInfo extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Row shopeName({String name}) {
-    return Row(
-      children: <Widget>[
-        Icon(
-          Icons.location_on,
-          color: ksecondaryColor,
-        ),
-        SizedBox(width: 10),
-        Text(name),
-      ],
     );
   }
 }
