@@ -14,7 +14,7 @@ class ItemList extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Expanded(
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -25,18 +25,20 @@ class ItemList extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              ...List.generate(
-                  listPizzaMap.length,
-                  (index) => ItemDetailsCard(
-                        pizzaMap: listPizzaMap[index],
-                        size: size,
-                      ))
-            ],
-          ),
+          child: listPizzaMap != null
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    ...List.generate(
+                        listPizzaMap.length,
+                        (index) => ItemDetailsCard(
+                              pizzaMap: listPizzaMap[index],
+                              size: size,
+                            ))
+                  ],
+                )
+              : SizedBox(),
         ),
       ),
     );
@@ -79,7 +81,7 @@ class ItemDetailsCard extends StatelessWidget {
                     children: [
                       Text(
                         pizzaMap.title,
-                        style: kSmallTitleTextStyle,
+                        style: kMediumTitleTextStyle,
                       ),
                       addVerticalSpace(5.0),
                       Text(
@@ -111,16 +113,16 @@ class ItemDetailsCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 60, top: 30),
-                child: Expanded(
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 60, top: 30),
                   child: Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           '\$${pizzaMap.mediumPrice}',
-                          style: kSmallTitleTextStyle,
+                          style: kMediumTitleTextStyle,
                         ),
                         addVerticalSpace(35),
                         InkWell(

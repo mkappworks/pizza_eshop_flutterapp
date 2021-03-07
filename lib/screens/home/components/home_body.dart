@@ -20,25 +20,17 @@ class HomeBody extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0),
-            child: Column(
-              children: [
-                HomeAppBar(),
-                addVerticalSpace(10),
-                MainTitle(title: 'Food Delivery'),
-                addVerticalSpace(5),
-                SubTitle(subtitle: 'Ward Gateway Apt. 908'),
-                addVerticalSpace(5),
-                CategoryList(),
-              ],
-            ),
-          ),
+          HomeAppBar(),
+          addVerticalSpace(10),
+          MainTitle(title: 'Food Delivery'),
+          addVerticalSpace(5),
+          SubTitle(subtitle: 'Ward Gateway Apt. 908'),
+          addVerticalSpace(5),
+          CategoryList(),
           ItemList(listPizzaMap: listPizzaMap),
-         
         ],
       ),
     );
