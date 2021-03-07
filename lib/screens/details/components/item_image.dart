@@ -14,8 +14,8 @@ class ItemImage extends StatelessWidget {
         tag: pizzaMap.title,
         child: Image.asset(
           pizzaMap.image,
-          height: size.height * 0.3,
-          width: size.width * 0.8,
+         // height: size.height * 0.3,
+          width: size.width * 0.9,
           fit: BoxFit.fill,
         ),
       ),

@@ -18,10 +18,9 @@ class DetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+       bottom: false,
       child: Padding(
-        padding: EdgeInsets.only(
-          top: 20.0,
-        ),
+        padding: EdgeInsets.only(top: 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +28,7 @@ class DetailsBody extends StatelessWidget {
             DetailsAppBar(),
             addVerticalSpace(20),
             ItemImage(pizzaMap: pizzaMap),
-            addVerticalSpace(50),
+            addVerticalSpace(15),
             ItemInfo(pizzaMap: pizzaMap),
             addVerticalSpace(5),
           ],

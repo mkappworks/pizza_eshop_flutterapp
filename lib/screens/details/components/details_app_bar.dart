@@ -5,46 +5,49 @@ import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 class DetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/home.svg",
-            color: kSecondaryColor,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            icon: SvgPicture.asset(
+              "assets/icons/home.svg",
+              color: kSecondaryColor,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        RichText(
-          text: TextSpan(
-            style: Theme.of(context)
-                .textTheme
-                .title
-                .copyWith(fontWeight: FontWeight.bold),
-            children: [
-              TextSpan(
-                text: "$kPrimaryAppBarTitle",
-                style: TextStyle(color: kSecondaryColor),
-              ),
-              TextSpan(
-                text: "$kSecondaryAppBarTitle",
-                style: TextStyle(color: kPrimaryColor),
-              ),
-            ],
+          RichText(
+            text: TextSpan(
+              style: Theme.of(context)
+                  .textTheme
+                  .title
+                  .copyWith(fontWeight: FontWeight.bold),
+              children: [
+                TextSpan(
+                  text: "$kPrimaryAppBarTitle",
+                  style: TextStyle(color: kSecondaryColor),
+                ),
+                TextSpan(
+                  text: "$kSecondaryAppBarTitle",
+                  style: TextStyle(color: kPrimaryColor),
+                ),
+              ],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 10.0),
-          child: Container(
-            width: 35,
-            decoration: BoxDecoration(shape: BoxShape.circle),
-            child: ClipOval(),
-            // onPressed: () {},
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: Container(
+              width: 35,
+              decoration: BoxDecoration(shape: BoxShape.circle),
+              child: ClipOval(),
+              // onPressed: () {},
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

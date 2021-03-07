@@ -9,7 +9,7 @@ class DetailsScreen extends StatelessWidget {
 
   final PizzaMap pizzaMap;
 
-  DetailsScreen({@required this.pizzaMap});
+  DetailsScreen({this.pizzaMap});
 
   @override
   Widget build(BuildContext context) {
