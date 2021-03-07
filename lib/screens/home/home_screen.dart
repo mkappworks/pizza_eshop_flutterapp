@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/viewmodel/pizza_viewmodel.dart';
 
@@ -34,7 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: HomeBody(listPizzaMap: model.maps),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton.extended(
-        foregroundColor: Colors.white,backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.black,
         onPressed: () {},
         icon: Icon(Icons.shopping_bag),
         label: Text('2 Items \$54'),

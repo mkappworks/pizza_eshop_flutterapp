@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/sub_title.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/category_list.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/home_app_bar.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/main_title.dart';
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
 import 'details_app_bar.dart';

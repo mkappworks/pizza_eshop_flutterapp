@@ -29,7 +29,7 @@ class TitlePriceRating extends StatelessWidget {
               children: <Widget>[
                 Text(
                   name,
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.headline5,
                 ),
                 SizedBox(height: 10),
                 Row(
@@ -65,7 +65,7 @@ class TitlePriceRating extends StatelessWidget {
           "\$$price",
           style: Theme.of(context)
               .textTheme
-              .title
+              .headline6
               .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),

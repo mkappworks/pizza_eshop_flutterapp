@@ -6,7 +6,6 @@ import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
 import 'order_button.dart';
-import 'title_price_rating.dart';
 
 class ItemInfo extends StatelessWidget {
   final PizzaMap pizzaMap;

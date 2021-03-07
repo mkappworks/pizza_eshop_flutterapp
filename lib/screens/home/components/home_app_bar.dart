@@ -6,7 +6,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-     padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -18,7 +18,7 @@ class HomeAppBar extends StatelessWidget {
             text: TextSpan(
               style: Theme.of(context)
                   .textTheme
-                  .title
+                  .headline5
                   .copyWith(fontWeight: FontWeight.bold),
               children: [
                 TextSpan(
