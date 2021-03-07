@@ -16,7 +16,7 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-       return SafeArea(
+    return SafeArea(
       bottom: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
