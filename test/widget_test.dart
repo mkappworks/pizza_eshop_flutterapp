@@ -8,6 +8,6 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
-    expect(find.byType(Container), findsOneWidget);
+    expect(find.byType(MaterialApp), findsOneWidget);
   });
 }
