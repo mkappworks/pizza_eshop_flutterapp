@@ -9,8 +9,11 @@ const kTextDarkColor = Colors.black;
 const kLargeTitleTextStyle =
     TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30);
 
-const kSmallTitleTextStyle =
+const kMediumTitleTextStyle =
     TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20);
+
+const kSmallTitleTextStyle =
+    TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15);
 
 const kBackgroundColor = Color(0xFFEEDEAE5);
 
