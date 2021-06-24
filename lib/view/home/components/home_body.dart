@@ -10,9 +10,6 @@ import 'home_app_bar.dart';
 import 'main_title.dart';
 
 class HomeBody extends StatelessWidget {
-  final List<Pizza>? pizzaList;
-
-  HomeBody({required this.pizzaList});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +26,7 @@ class HomeBody extends StatelessWidget {
           SubTitle(subtitle: 'Ward Gateway Apt. 908'),
           addVerticalSpace(5),
           CategoryList(),
-          ItemList(pizzaList: pizzaList),
+          ItemList(),
         ],
       ),
     );
