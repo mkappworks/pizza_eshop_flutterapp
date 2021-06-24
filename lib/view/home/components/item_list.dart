@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
-import 'package:pizza_eshop_flutterapp/screens/details/details_screen.dart';
+import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/view/details/details_screen.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
 class ItemList extends StatelessWidget {
-  final List<PizzaMap>? listPizzaMap;
+  final List<Pizza>? pizzaList;
 
-  ItemList({required this.listPizzaMap});
+  ItemList({required this.pizzaList});
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +25,15 @@ class ItemList extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: listPizzaMap != null
+          child: pizzaList != null
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     ...List.generate(
-                        listPizzaMap!.length,
+                        pizzaList!.length,
                         (index) => ItemDetailsCard(
-                              pizzaMap: listPizzaMap![index],
+                              pizza: pizzaList![index],
                               size: size,
                             ))
                   ],
@@ -46,11 +46,11 @@ class ItemList extends StatelessWidget {
 }
 
 class ItemDetailsCard extends StatelessWidget {
-  final PizzaMap pizzaMap;
+  final Pizza pizza;
   final Size size;
 
   ItemDetailsCard({
-    required this.pizzaMap,
+    required this.pizza,
     required this.size,
   });
 
@@ -67,8 +67,8 @@ class ItemDetailsCard extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Hero(
-                    tag: pizzaMap.title!,
-                    child: Image.asset(pizzaMap.image!),
+                    tag: pizza.title!,
+                    child: Image.asset(pizza.image!),
                   ),
                 ),
               ),
@@ -80,12 +80,12 @@ class ItemDetailsCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        pizzaMap.title!,
+                        pizza.title!,
                         style: kMediumTitleTextStyle,
                       ),
                       addVerticalSpace(5.0),
                       Text(
-                        '${pizzaMap.mediumWeight} | ${pizzaMap.mediumCalorie}',
+                        '${pizza.mediumWeight} | ${pizza.mediumCalorie}',
                       ),
                       addVerticalSpace(20.0),
                       Container(
@@ -121,7 +121,7 @@ class ItemDetailsCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          '\$${pizzaMap.mediumPrice}',
+                          '\$${pizza.mediumPrice}',
                           style: kMediumTitleTextStyle,
                         ),
                         addVerticalSpace(35),
@@ -131,7 +131,7 @@ class ItemDetailsCard extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      DetailsScreen(pizzaMap: pizzaMap)),
+                                      DetailsScreen(pizza: pizza)),
                             );
                           },
                           child: Container(

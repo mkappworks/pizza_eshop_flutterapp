@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/viewmodel/pizza_viewmodel.dart';
+import 'package:pizza_eshop_flutterapp/controller/pizza_viewmodel.dart';
 
 import '../../utilities/constants.dart';
 import 'components/home_body.dart';
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: HomeBody(listPizzaMap: model.maps),
+      body: HomeBody(pizzaList: model.pizzaList),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton.extended(
         foregroundColor: Colors.white,

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/main_title.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/sub_title.dart';
+import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/sub_title.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
 import 'order_button.dart';
 
 class ItemInfo extends StatelessWidget {
-  final PizzaMap? pizzaMap;
+  final Pizza? pizza;
 
-  ItemInfo({required this.pizzaMap});
+  ItemInfo({required this.pizza});
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,12 @@ class ItemInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MainTitle(title: pizzaMap!.title),
+            MainTitle(title: pizza!.title),
             addVerticalSpace(10),
             SubTitle(
-                subtitle:
-                    '${pizzaMap!.mediumWeight} | ${pizzaMap!.mediumCalorie}'),
+                subtitle: '${pizza!.mediumWeight} | ${pizza!.mediumCalorie}'),
             addVerticalSpace(size.height * 0.02),
-            QuantitySizePriceSelector(pizzaMap: pizzaMap),
+            QuantitySizePriceSelector(pizza: pizza),
             addVerticalSpace(size.height * 0.02),
             AddOnSelector(),
             addVerticalSpace(size.height * 0.02),
@@ -140,12 +139,11 @@ class AddOnItemCard extends StatelessWidget {
 }
 
 class QuantitySizePriceSelector extends StatelessWidget {
-  const QuantitySizePriceSelector({
-    Key? key,
-    required this.pizzaMap,
-  }) : super(key: key);
+  final Pizza? pizza;
 
-  final PizzaMap? pizzaMap;
+  QuantitySizePriceSelector({
+    required this.pizza,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +154,7 @@ class QuantitySizePriceSelector extends StatelessWidget {
         children: [
           QuantitySelector(),
           SizeSelector(),
-          PriceDisplayContainer(pizzaMap: pizzaMap)
+          PriceDisplayContainer(pizza: pizza)
         ],
       ),
     );
@@ -191,25 +189,21 @@ class SizeSelector extends StatelessWidget {
 }
 
 class PriceDisplayContainer extends StatelessWidget {
-  const PriceDisplayContainer({
-    Key? key,
-    required this.pizzaMap,
-  }) : super(key: key);
+  PriceDisplayContainer({
+    required this.pizza,
+  });
 
-  final PizzaMap? pizzaMap;
+  final Pizza? pizza;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('\$${pizzaMap!.mediumPrice}', style: kLargeTitleTextStyle),
+      child: Text('\$${pizza!.mediumPrice}', style: kLargeTitleTextStyle),
     );
   }
 }
 
 class QuantitySelector extends StatelessWidget {
-  const QuantitySelector({
-    Key? key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

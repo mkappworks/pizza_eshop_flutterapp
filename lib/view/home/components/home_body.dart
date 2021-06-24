@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
-import 'package:pizza_eshop_flutterapp/screens/home/components/item_list.dart';
+import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/item_list.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
@@ -10,9 +10,9 @@ import 'home_app_bar.dart';
 import 'main_title.dart';
 
 class HomeBody extends StatelessWidget {
-  final List<PizzaMap>? listPizzaMap;
+  final List<Pizza>? pizzaList;
 
-  HomeBody({required this.listPizzaMap});
+  HomeBody({required this.pizzaList});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class HomeBody extends StatelessWidget {
           SubTitle(subtitle: 'Ward Gateway Apt. 908'),
           addVerticalSpace(5),
           CategoryList(),
-          ItemList(listPizzaMap: listPizzaMap),
+          ItemList(pizzaList: pizzaList),
         ],
       ),
     );

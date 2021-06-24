@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
+import 'package:pizza_eshop_flutterapp/model/pizza.dart';
 
 class ItemImage extends StatelessWidget {
-  final PizzaMap? pizzaMap;
+  final Pizza? pizzaMap;
 
   ItemImage({this.pizzaMap});
 

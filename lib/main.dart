@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'utilities/constants.dart';
 
-import 'screens/home/home_screen.dart';
+import 'view/home/home_screen.dart';
 import 'utilities/routes.dart';
 
 void main() {

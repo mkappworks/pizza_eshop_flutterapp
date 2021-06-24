@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PizzaMap {
+class Pizza {
   final String? title;
   final String? description;
   final String? image;
@@ -11,7 +11,7 @@ class PizzaMap {
   final String? largeCalorie;
   final double? largePrice;
 
-  PizzaMap({
+  Pizza({
     required this.title,
     required this.description,
     required this.image,
@@ -23,8 +23,8 @@ class PizzaMap {
     required this.largePrice,
   });
 
-  factory PizzaMap.fromJson(Map<String, dynamic> json) {
-    return PizzaMap(
+  factory Pizza.fromJson(Map<String, dynamic> json) {
+    return Pizza(
       title: json['title'],
       description: json['description'],
       image: json['image'],
