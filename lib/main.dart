@@ -16,10 +16,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: kPrimaryColor,
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kSecondaryColor),
-          bodyText2: TextStyle(color: kSecondaryColor),
-        ),
+        accentColor: kSecondaryColor,
+        textTheme: kTextThemeDefault,
+        fontFamily: "Roboto",
       ),
       initialRoute: HomeScreen.routeName,
       routes: routes,

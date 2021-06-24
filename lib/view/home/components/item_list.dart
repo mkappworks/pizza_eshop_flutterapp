@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/model/pizza.dart';
 import 'package:pizza_eshop_flutterapp/view/details/details_screen.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
-import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
+import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
 class ItemList extends StatelessWidget {
   final List<Pizza>? pizzaList;
@@ -81,7 +81,7 @@ class ItemDetailsCard extends StatelessWidget {
                     children: [
                       Text(
                         pizza.title!,
-                        style: kMediumTitleTextStyle,
+                        style: Theme.of(context).textTheme.headline2,
                       ),
                       addVerticalSpace(5.0),
                       Text(
@@ -122,7 +122,7 @@ class ItemDetailsCard extends StatelessWidget {
                       children: [
                         Text(
                           '\$${pizza.mediumPrice}',
-                          style: kMediumTitleTextStyle,
+                          style: Theme.of(context).textTheme.headline2,
                         ),
                         addVerticalSpace(35),
                         InkWell(

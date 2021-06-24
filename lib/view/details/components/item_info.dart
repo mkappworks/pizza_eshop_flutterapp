@@ -3,7 +3,7 @@ import 'package:pizza_eshop_flutterapp/model/pizza.dart';
 import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
 import 'package:pizza_eshop_flutterapp/view/home/components/sub_title.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
-import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
+import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
 import 'order_button.dart';
 
@@ -127,7 +127,7 @@ class AddOnItemCard extends StatelessWidget {
                 addVerticalSpace(15.0),
                 Text(
                   label,
-                  style: kSmallTitleTextStyle,
+                  style: Theme.of(context).textTheme.headline4,
                 )
               ],
             ),
@@ -198,13 +198,13 @@ class PriceDisplayContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('\$${pizza!.mediumPrice}', style: kLargeTitleTextStyle),
+      child: Text('\$${pizza!.mediumPrice}',
+          style: Theme.of(context).textTheme.headline1),
     );
   }
 }
 
 class QuantitySelector extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -220,7 +220,7 @@ class QuantitySelector extends StatelessWidget {
                 icon: Icons.remove,
               ),
               addHorizontalSpace(15.0),
-              Text('1', style: kLargeTitleTextStyle),
+              Text('1', style: Theme.of(context).textTheme.headline1),
               addHorizontalSpace(15.0),
               QuantityIconButton(
                 onPress: () {},
@@ -252,7 +252,9 @@ class SizeButton extends StatelessWidget {
           width: 50,
           decoration: BoxDecoration(
               color: isSelected ? kSecondaryColor : Colors.transparent),
-          child: Center(child: Text(label, style: kLargeTitleTextStyle))),
+          child: Center(
+              child:
+                  Text(label, style: Theme.of(context).textTheme.headline1))),
     );
   }
 }
