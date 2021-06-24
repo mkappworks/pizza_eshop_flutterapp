@@ -33,7 +33,7 @@ class ItemInfo extends StatelessWidget {
             MainTitle(title: pizza!.title),
             addVerticalSpace(10),
             SubTitle(
-                subtitle: '${pizza!.mediumWeight} | ${pizza!.mediumCalorie}'),
+                subtitle: '${pizza!.mediumweight} | ${pizza!.mediumcalorie}'),
             addVerticalSpace(size.height * 0.02),
             QuantitySizePriceSelector(pizza: pizza),
             addVerticalSpace(size.height * 0.02),
@@ -198,7 +198,7 @@ class PriceDisplayContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('\$${pizza!.mediumPrice}',
+      child: Text('\$${pizza!.mediumprice}',
           style: Theme.of(context).textTheme.headline1),
     );
   }
