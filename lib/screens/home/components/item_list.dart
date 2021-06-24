@@ -5,9 +5,9 @@ import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 
 class ItemList extends StatelessWidget {
-  final List<PizzaMap> listPizzaMap;
+  final List<PizzaMap>? listPizzaMap;
 
-  ItemList({@required this.listPizzaMap});
+  ItemList({required this.listPizzaMap});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,9 @@ class ItemList extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     ...List.generate(
-                        listPizzaMap.length,
+                        listPizzaMap!.length,
                         (index) => ItemDetailsCard(
-                              pizzaMap: listPizzaMap[index],
+                              pizzaMap: listPizzaMap![index],
                               size: size,
                             ))
                   ],
@@ -50,8 +50,8 @@ class ItemDetailsCard extends StatelessWidget {
   final Size size;
 
   ItemDetailsCard({
-    @required this.pizzaMap,
-    @required this.size,
+    required this.pizzaMap,
+    required this.size,
   });
 
   @override
@@ -67,8 +67,8 @@ class ItemDetailsCard extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Hero(
-                    tag: pizzaMap.title,
-                    child: Image.asset(pizzaMap.image),
+                    tag: pizzaMap.title!,
+                    child: Image.asset(pizzaMap.image!),
                   ),
                 ),
               ),
@@ -80,7 +80,7 @@ class ItemDetailsCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        pizzaMap.title,
+                        pizzaMap.title!,
                         style: kMediumTitleTextStyle,
                       ),
                       addVerticalSpace(5.0),

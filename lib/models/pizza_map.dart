@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
 class PizzaMap {
-  final String title;
-  final String description;
-  final String image;
-  final String mediumWeight;
-  final String mediumCalorie;
-  final double mediumPrice;
-  final String largeWeight;
-  final String largeCalorie;
-  final double largePrice;
+  final String? title;
+  final String? description;
+  final String? image;
+  final String? mediumWeight;
+  final String? mediumCalorie;
+  final double? mediumPrice;
+  final String? largeWeight;
+  final String? largeCalorie;
+  final double? largePrice;
 
   PizzaMap({
-    @required this.title,
-    @required this.description,
-    @required this.image,
-    @required this.mediumWeight,
-    @required this.mediumCalorie,
-    @required this.mediumPrice,
-    @required this.largeWeight,
-    @required this.largeCalorie,
-    @required this.largePrice,
+    required this.title,
+    required this.description,
+    required this.image,
+    required this.mediumWeight,
+    required this.mediumCalorie,
+    required this.mediumPrice,
+    required this.largeWeight,
+    required this.largeCalorie,
+    required this.largePrice,
   });
 
   factory PizzaMap.fromJson(Map<String, dynamic> json) {

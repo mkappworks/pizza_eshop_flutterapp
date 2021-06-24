@@ -7,9 +7,9 @@ import 'item_image.dart';
 import 'item_info.dart';
 
 class DetailsBody extends StatelessWidget {
-  final PizzaMap pizzaMap;
+  final PizzaMap? pizzaMap;
 
-  DetailsBody({@required this.pizzaMap});
+  DetailsBody({required this.pizzaMap});
 
   @override
   Widget build(BuildContext context) {

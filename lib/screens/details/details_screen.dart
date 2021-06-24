@@ -7,7 +7,7 @@ import 'components/details_body.dart';
 class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
 
-  final PizzaMap pizzaMap;
+  final PizzaMap? pizzaMap;
 
   DetailsScreen({this.pizzaMap});
 

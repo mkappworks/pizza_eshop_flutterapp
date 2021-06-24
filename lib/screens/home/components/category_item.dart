@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class CategoryItem extends StatelessWidget {
-  final String title;
+  final String? title;
   final bool isActive;
-  final Function press;
+  final Function? press;
   const CategoryItem({
-    Key key,
+    Key? key,
     this.title,
     this.isActive = false,
     this.press,
@@ -16,13 +16,13 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: press,
+      onTap: press as void Function()?,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
           children: <Widget>[
             Text(
-              title,
+              title!,
               style: isActive
                   ? TextStyle(
                       color: kTextColor,

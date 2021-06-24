@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:pizza_eshop_flutterapp/models/pizza_map.dart';
 
 class UserProgressModel with ChangeNotifier {
-  List<PizzaMap> maps;
+  List<PizzaMap>? maps;
 
   Future<void> fetchMap() async {
     final parsedJson = jsonDecode(await _getJson()) as List<dynamic>;

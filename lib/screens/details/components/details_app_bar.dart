@@ -22,7 +22,7 @@ class DetailsAppBar extends StatelessWidget {
           RichText(
             text: TextSpan(
               style: Theme.of(context)
-                  .textTheme.headline6
+                  .textTheme.headline6!
                   .copyWith(fontWeight: FontWeight.bold),
               children: [
                 TextSpan(

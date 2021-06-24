@@ -8,9 +8,9 @@ import 'package:pizza_eshop_flutterapp/utilities/widget_functions.dart';
 import 'order_button.dart';
 
 class ItemInfo extends StatelessWidget {
-  final PizzaMap pizzaMap;
+  final PizzaMap? pizzaMap;
 
-  ItemInfo({@required this.pizzaMap});
+  ItemInfo({required this.pizzaMap});
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +30,11 @@ class ItemInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MainTitle(title: pizzaMap.title),
+            MainTitle(title: pizzaMap!.title),
             addVerticalSpace(10),
             SubTitle(
                 subtitle:
-                    '${pizzaMap.mediumWeight} | ${pizzaMap.mediumCalorie}'),
+                    '${pizzaMap!.mediumWeight} | ${pizzaMap!.mediumCalorie}'),
             addVerticalSpace(size.height * 0.02),
             QuantitySizePriceSelector(pizzaMap: pizzaMap),
             addVerticalSpace(size.height * 0.02),
@@ -97,10 +97,10 @@ class AddOnItemCard extends StatelessWidget {
   final bool isSelected;
 
   AddOnItemCard({
-    @required this.label,
-    @required this.image,
-    @required this.isSelected,
-    @required this.onPress,
+    required this.label,
+    required this.image,
+    required this.isSelected,
+    required this.onPress,
   });
 
   @override
@@ -108,7 +108,7 @@ class AddOnItemCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: InkWell(
-        onTap: onPress,
+        onTap: onPress as void Function()?,
         child: Container(
           decoration: BoxDecoration(
               color: isSelected
@@ -141,11 +141,11 @@ class AddOnItemCard extends StatelessWidget {
 
 class QuantitySizePriceSelector extends StatelessWidget {
   const QuantitySizePriceSelector({
-    Key key,
-    @required this.pizzaMap,
+    Key? key,
+    required this.pizzaMap,
   }) : super(key: key);
 
-  final PizzaMap pizzaMap;
+  final PizzaMap? pizzaMap;
 
   @override
   Widget build(BuildContext context) {
@@ -192,23 +192,23 @@ class SizeSelector extends StatelessWidget {
 
 class PriceDisplayContainer extends StatelessWidget {
   const PriceDisplayContainer({
-    Key key,
-    @required this.pizzaMap,
+    Key? key,
+    required this.pizzaMap,
   }) : super(key: key);
 
-  final PizzaMap pizzaMap;
+  final PizzaMap? pizzaMap;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('\$${pizzaMap.mediumPrice}', style: kLargeTitleTextStyle),
+      child: Text('\$${pizzaMap!.mediumPrice}', style: kLargeTitleTextStyle),
     );
   }
 }
 
 class QuantitySelector extends StatelessWidget {
   const QuantitySelector({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -244,15 +244,15 @@ class SizeButton extends StatelessWidget {
   final bool isSelected;
 
   SizeButton({
-    @required this.label,
-    @required this.onPress,
-    @required this.isSelected,
+    required this.label,
+    required this.onPress,
+    required this.isSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPress,
+      onTap: onPress as void Function()?,
       child: Container(
           padding: EdgeInsets.all(8.0),
           width: 50,
@@ -268,14 +268,14 @@ class QuantityIconButton extends StatelessWidget {
   final Function onPress;
 
   QuantityIconButton({
-    @required this.icon,
-    @required this.onPress,
+    required this.icon,
+    required this.onPress,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPress,
+      onTap: onPress as void Function()?,
       child: Icon(icon),
     );
   }

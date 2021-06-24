@@ -10,9 +10,9 @@ import 'home_app_bar.dart';
 import 'main_title.dart';
 
 class HomeBody extends StatelessWidget {
-  final List<PizzaMap> listPizzaMap;
+  final List<PizzaMap>? listPizzaMap;
 
-  HomeBody({@required this.listPizzaMap});
+  HomeBody({required this.listPizzaMap});
 
   @override
   Widget build(BuildContext context) {

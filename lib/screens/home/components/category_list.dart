@@ -4,7 +4,7 @@ import 'category_item.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
