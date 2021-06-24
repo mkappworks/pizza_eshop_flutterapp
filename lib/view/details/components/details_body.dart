@@ -23,7 +23,7 @@ class DetailsBody extends StatelessWidget {
           children: [
             DetailsAppBar(),
             addVerticalSpace(20),
-            ItemImage(pizzaMap: pizza),
+            ItemImage(pizza: pizza),
             addVerticalSpace(15),
             ItemInfo(pizza: pizza),
             addVerticalSpace(5),
