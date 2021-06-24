@@ -59,6 +59,7 @@
     "description": "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.",
     "image": "assets/images/pizza3.png",
     "mediumweight": "500gr",
+    "mediumcalorie": "3000kcal",
     "mediumprice": 8.00,
     "largeweight": "1000gr",
     "largecalorie": "6000kcal",
