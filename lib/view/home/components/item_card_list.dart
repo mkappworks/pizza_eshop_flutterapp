@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
+
 import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+
 import 'package:pizza_eshop_flutterapp/view/home/components/item_card.dart';
 
 class ItemList extends StatelessWidget {
@@ -9,7 +12,6 @@ class ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     //depending on the ListStatus which can be loading or loaded or empty from FoodController the respective widgets are returned
     return Obx(() {
       switch (_foodController.getStatus.value) {
@@ -36,10 +38,7 @@ class ItemList extends StatelessWidget {
                   children: <Widget>[
                     ...List.generate(
                       _pizzaList.length,
-                      (index) => ItemCard(
-                        pizza: _pizzaList[index],
-                        size: size,
-                      ),
+                      (index) => ItemCard(pizza: _pizzaList[index]),
                     )
                   ],
                 ),

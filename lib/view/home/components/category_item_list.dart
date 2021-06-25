@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:pizza_eshop_flutterapp/controller/item/category_controller.dart';
 
-import 'category_item.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/category_item.dart';
 
 class CategoryItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ;
-
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(

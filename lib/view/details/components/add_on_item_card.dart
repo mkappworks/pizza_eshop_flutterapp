@@ -23,11 +23,12 @@ class AddOnItemCard extends StatelessWidget {
         onTap: onPress as void Function()?,
         child: Container(
           decoration: BoxDecoration(
-              color: isSelected
-                  ? kSecondaryColor.withOpacity(0.5)
-                  : Colors.transparent,
-              border: Border.all(color: kSecondaryColor),
-              borderRadius: BorderRadius.circular(8.0)),
+            color: isSelected
+                ? kSecondaryColor.withOpacity(0.5)
+                : Colors.transparent,
+            border: Border.all(color: kSecondaryColor),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Column(

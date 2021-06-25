@@ -11,9 +11,7 @@ class SubTitle extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         subtitle,
-        style: TextStyle(
-          color: Colors.black,
-        ),
+        style: Theme.of(context).textTheme.subtitle2,
       ),
     );
   }

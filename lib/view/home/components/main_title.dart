@@ -10,11 +10,7 @@ class MainTitle extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         title,
-        style: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
-          fontSize: 30,
-        ),
+        style: Theme.of(context).textTheme.headline1,
       ),
     );
   }

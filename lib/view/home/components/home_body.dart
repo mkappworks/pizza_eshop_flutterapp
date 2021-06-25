@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/item_card_list.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
-import 'sub_title.dart';
-import 'category_item_list.dart';
-import 'main_title.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/category_item_list.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/item_card_list.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/sub_title.dart';
 
 class HomeBody extends StatelessWidget {
   @override

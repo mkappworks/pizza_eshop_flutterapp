@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/home_app_bar.dart';
 
-import '../../utilities/constants.dart';
-import 'components/home_body.dart';
+import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
+
+import 'package:pizza_eshop_flutterapp/view/home/components/home_app_bar.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/home_body.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -12,8 +13,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: HomeAppBar()), // HomeAppBar(),
+        preferredSize: Size.fromHeight(50.0),
+        child: HomeAppBar(),
+      ), // HomeAppBar(),
       body: HomeBody(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton.extended(
