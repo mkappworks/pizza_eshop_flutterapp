@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class OrderButton extends StatelessWidget {
