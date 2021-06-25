@@ -6,29 +6,22 @@ import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
 import 'sub_title.dart';
 import 'category_item_list.dart';
-import 'home_app_bar.dart';
 import 'main_title.dart';
 
 class HomeBody extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          HomeAppBar(),
-          addVerticalSpace(10),
-          MainTitle(title: 'Food Delivery'),
-          addVerticalSpace(5),
-          SubTitle(subtitle: 'Ward Gateway Apt. 908'),
-          addVerticalSpace(5),
-          CategoryItemList(),
-          ItemList(),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        MainTitle(title: 'Food Delivery'),
+        addVerticalSpace(5),
+        SubTitle(subtitle: 'Ward Gateway Apt. 908'),
+        addVerticalSpace(5),
+        CategoryItemList(),
+        ItemList(),
+      ],
     );
   }
 }
