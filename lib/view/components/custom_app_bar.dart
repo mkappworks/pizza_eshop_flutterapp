@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
-class DetailsAppBar extends StatelessWidget {
+class CustomAppBar extends StatelessWidget {
+  final Widget leadingWidget;
+  final Function onLeadingWidgetTap;
+  final Widget trailingWidget;
+  final Function onTrailingWidgetTap;
+
+  CustomAppBar({
+    required this.leadingWidget,
+    required this.onLeadingWidgetTap,
+    required this.trailingWidget,
+    required this.onTrailingWidgetTap,
+  });
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -18,11 +29,8 @@ class DetailsAppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                onTap: () => Get.back(),
-                child: Icon(
-                  Icons.home,
-                  size: 35,
-                ),
+                onTap: onLeadingWidgetTap as void Function(),
+                child: leadingWidget,
               ),
               RichText(
                 text: TextSpan(
@@ -42,14 +50,9 @@ class DetailsAppBar extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(right: 10.0),
-                child: Container(
-                  width: 35,
-                  decoration: BoxDecoration(shape: BoxShape.circle),
-                  child: ClipOval(),
-                  // onPressed: () {},
-                ),
+              GestureDetector(
+                onTap: onTrailingWidgetTap as void Function(),
+                child: trailingWidget,
               ),
             ],
           ),
