@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/model/pizza.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/item_list.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/item_card_list.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
