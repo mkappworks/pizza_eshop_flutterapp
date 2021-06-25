@@ -1,35 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:pizza_eshop_flutterapp/controller/item/category_controller.dart';
 
 import 'category_item.dart';
 
-class CategoryList extends StatelessWidget {
-  const CategoryList({
-    Key? key,
-  }) : super(key: key);
-
+class CategoryItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ;
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           CategoryItem(
-            title: "Combo Meal",
-            isActive: true,
-            press: () {},
+            category: CategoryList.Pizza,
           ),
           CategoryItem(
-            title: "Chicken",
-            press: () {},
+            category: CategoryList.Chicken,
           ),
           CategoryItem(
-            title: "Beverages",
-            press: () {},
+            category: CategoryList.Beverages,
           ),
           CategoryItem(
-            title: "Snacks & Sides",
-            press: () {},
+            category: CategoryList.Desserts,
           ),
         ],
       ),

@@ -5,7 +5,7 @@ import 'package:pizza_eshop_flutterapp/view/home/components/item_list.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
 import 'sub_title.dart';
-import 'category_list.dart';
+import 'category_item_list.dart';
 import 'home_app_bar.dart';
 import 'main_title.dart';
 
@@ -25,7 +25,7 @@ class HomeBody extends StatelessWidget {
           addVerticalSpace(5),
           SubTitle(subtitle: 'Ward Gateway Apt. 908'),
           addVerticalSpace(5),
-          CategoryList(),
+          CategoryItemList(),
           ItemList(),
         ],
       ),
