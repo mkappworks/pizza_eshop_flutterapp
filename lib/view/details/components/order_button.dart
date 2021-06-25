@@ -3,14 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class OrderButton extends StatelessWidget {
-  const OrderButton({
-    Key? key,
-    required this.size,
-    this.press,
-  }) : super(key: key);
-
   final Size size;
   final Function? press;
+
+  OrderButton({
+    required this.size,
+    this.press,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +29,16 @@ class OrderButton extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SvgPicture.asset("assets/icons/bag.svg"),
+                  Icon(
+                    Icons.shopping_bag,
+                    color: Colors.white,
+                  ),
                   SizedBox(width: 10),
-                  Text(
-                    "Add To Cart",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  )
+                  Text("Add To Cart",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline3
+                          ?.copyWith(color: kSecondaryTextColor))
                 ],
               ),
             ),
