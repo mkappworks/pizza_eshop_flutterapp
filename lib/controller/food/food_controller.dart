@@ -7,9 +7,10 @@ enum ListStatus { loading, loaded, empty }
 class FoodController extends GetxController {
   Rx<ListStatus> _status = ListStatus.loading.obs;
   RxList<Pizza> _pizzaList = <Pizza>[].obs;
+  RxList<Pizza> _currentSelectedPizza = <Pizza>[].obs;
 
   // @override
-   Future<void> onInit() async => await _setPizzaList();
+  Future<void> onInit() async => await _setPizzaList();
 
   //GetX Controller function to get the all pizza data from the database
   Future<void> _setPizzaList() async {
@@ -23,8 +24,20 @@ class FoodController extends GetxController {
     update();
   }
 
+  void setCurrentSelectedPizza(Pizza pizza) {
+    _currentSelectedPizza.assign(pizza);
+    update();
+  }
+
+  void setCurrentSelectedPizzaToInitial(Pizza pizza) {
+    _currentSelectedPizza.clear();
+    update();
+  }
+
   //gets the ListStatus
   Rx<ListStatus> get getStatus => _status;
   //get the all pizza list db
   RxList<Pizza> get getUsersList => _pizzaList;
+
+  RxList<Pizza> get getCurrentSelectedPizza => _currentSelectedPizza;
 }
