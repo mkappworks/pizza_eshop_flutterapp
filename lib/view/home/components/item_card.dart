@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
+
 import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
+
 import 'package:pizza_eshop_flutterapp/view/details/detail_screen.dart';
 
 class ItemCard extends StatelessWidget {
   final Pizza pizza;
-  final Size size;
+  final FoodController _foodController = Get.find();
 
-  ItemCard({
-    required this.pizza,
-    required this.size,
-  });
+  ItemCard({required this.pizza});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +65,7 @@ class ItemCard extends StatelessWidget {
                               Icon(Icons.av_timer_sharp),
                               Text(
                                 ' - 25mins',
-                                style: TextStyle(color: kTextDarkColor),
+                                style: TextStyle(color: kPrimaryTextColor),
                               ),
                             ],
                           ),
@@ -86,12 +89,8 @@ class ItemCard extends StatelessWidget {
                         addVerticalSpace(35),
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      DetailScreen(pizza: pizza)),
-                            );
+                            _foodController.setCurrentSelectedPizza(pizza);
+                            Get.toNamed(DetailScreen.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
