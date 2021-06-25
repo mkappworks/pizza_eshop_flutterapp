@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+
+import 'package:pizza_eshop_flutterapp/view/details/components/item_image.dart';
+import 'package:pizza_eshop_flutterapp/view/details/components/item_info.dart';
+
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
-import 'item_image.dart';
-import 'item_info.dart';
-
-class DetailsBody extends StatelessWidget {
-  final Pizza pizza;
-
-  DetailsBody({required this.pizza});
-
+class DetailBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,9 +16,9 @@ class DetailsBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ItemImage(pizza: pizza),
+            ItemImage(),
             addVerticalSpace(15),
-            ItemInfo(pizza: pizza),
+            ItemInfo(),
             addVerticalSpace(5),
           ],
         ),

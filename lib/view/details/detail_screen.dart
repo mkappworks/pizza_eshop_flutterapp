@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
-import 'package:pizza_eshop_flutterapp/view/details/components/details_app_bar.dart';
 
-import '../../utilities/constants.dart';
-import 'components/details_body.dart';
+import 'package:pizza_eshop_flutterapp/view/details/components/detail_app_bar.dart';
+import 'package:pizza_eshop_flutterapp/view/details/components/detail_body.dart';
+
+import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class DetailScreen extends StatelessWidget {
   static String routeName = "/details";
-
-  final Pizza? pizza;
-
-  DetailScreen({this.pizza});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +14,9 @@ class DetailScreen extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
-        child: DetailsAppBar(),
+        child: DetailAppBar(),
       ),
-      body: DetailsBody(
-        pizza: pizza!,
-      ),
+      body: DetailBody(),
     );
   }
 }
