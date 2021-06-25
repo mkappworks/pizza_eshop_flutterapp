@@ -26,7 +26,7 @@ class HomeAppBar extends StatelessWidget {
                 text: TextSpan(
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headline3!
                       .copyWith(fontWeight: FontWeight.bold),
                   children: [
                     TextSpan(
