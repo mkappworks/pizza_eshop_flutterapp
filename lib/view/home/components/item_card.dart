@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/model/pizza.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
-import 'package:pizza_eshop_flutterapp/view/details/details_screen.dart';
+import 'package:pizza_eshop_flutterapp/view/details/detail_screen.dart';
 
 class ItemCard extends StatelessWidget {
   final Pizza pizza;
@@ -90,7 +90,7 @@ class ItemCard extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      DetailsScreen(pizza: pizza)),
+                                      DetailScreen(pizza: pizza)),
                             );
                           },
                           child: Container(
