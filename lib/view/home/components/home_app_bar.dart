@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -10,9 +9,12 @@ class HomeAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            icon: SvgPicture.asset("assets/icons/menu.svg"),
-            onPressed: () {},
+          GestureDetector(
+            onTap: () {},
+            child: Icon(
+              Icons.menu,
+              size: 35,
+            ),
           ),
           RichText(
             text: TextSpan(
@@ -32,13 +34,18 @@ class HomeAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: 35,
-            decoration: BoxDecoration(shape: BoxShape.circle),
-            child: ClipOval(
-              child: Image.asset('assets/images/person.png'),
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              decoration:
+                  BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+              child: ClipOval(
+                child: Icon(
+                  Icons.person,
+                  size: 35,
+                ),
+              ),
             ),
-            // onPressed: () {},
           ),
         ],
       ),
