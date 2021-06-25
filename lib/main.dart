@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 import 'package:pizza_eshop_flutterapp/controller/item/category_controller.dart';
 
-import 'utilities/constants.dart';
+import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
+import 'package:pizza_eshop_flutterapp/utilities/routes.dart';
 
-import 'view/home/home_screen.dart';
-import 'utilities/routes.dart';
+import 'package:pizza_eshop_flutterapp/view/home/home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
       ),
       initialRoute: HomeScreen.routeName,
-      routes: routes,
+      getPages: routes,
     );
   }
 }
