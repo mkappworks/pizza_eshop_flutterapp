@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:pizza_eshop_flutterapp/controller/item/category_controller.dart';
+import 'package:pizza_eshop_flutterapp/controller/category/category_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 

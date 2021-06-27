@@ -7,7 +7,7 @@ import 'package:pizza_eshop_flutterapp/model/pizza.dart';
 
 import 'package:pizza_eshop_flutterapp/view/home/components/item_card.dart';
 
-class ItemList extends StatelessWidget {
+class ItemCardList extends StatelessWidget {
   final FoodController _foodController = Get.find();
 
   @override
