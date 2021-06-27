@@ -8,14 +8,13 @@ class DetailAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppBar(
       leadingWidget: Icon(
-        Icons.home,
+        Icons.home_rounded,
         size: 35,
       ),
       onLeadingWidgetTap: () => Get.back(),
-      trailingWidget: Container(
-        width: 35,
-        decoration: BoxDecoration(shape: BoxShape.circle),
-        child: ClipOval(),
+      trailingWidget: Icon(
+        Icons.shopping_bag_rounded,
+        size: 35,
       ),
       onTrailingWidgetTap: () => Get.back(),
     );
