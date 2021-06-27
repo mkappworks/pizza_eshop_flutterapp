@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 import 'package:pizza_eshop_flutterapp/view/home/components/item_card.dart';
 
@@ -18,7 +18,7 @@ class ItemCardList extends StatelessWidget {
         case ListStatus.loading:
           return Center(child: CircularProgressIndicator());
         case ListStatus.loaded:
-          RxList<Pizza> _pizzaList = _foodController.getUsersList;
+          RxList<Food> _pizzaList = _foodController.getPizzaList;
           return Expanded(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 15),

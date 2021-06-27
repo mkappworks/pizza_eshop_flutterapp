@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
@@ -11,7 +11,7 @@ import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 import 'package:pizza_eshop_flutterapp/view/details/detail_screen.dart';
 
 class ItemCard extends StatelessWidget {
-  final Pizza pizza;
+  final Food pizza;
   final FoodController _foodController = Get.find();
 
   ItemCard({required this.pizza});
@@ -64,7 +64,7 @@ class ItemCard extends StatelessWidget {
                             children: [
                               Icon(Icons.av_timer_sharp),
                               Text(
-                                ' - 25mins',
+                                ' - ${pizza.time}mins',
                                 style: TextStyle(color: kPrimaryTextColor),
                               ),
                             ],

@@ -1,15 +1,15 @@
 import 'package:get/get.dart';
 import 'package:pizza_eshop_flutterapp/controller/food/helper/food_service_helper.dart';
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 enum ListStatus { loading, loaded, empty }
 
 class FoodController extends GetxController {
   Rx<ListStatus> _status = ListStatus.loading.obs;
-  RxList<Pizza> _pizzaList = <Pizza>[].obs;
-  RxList<Pizza> _currentSelectedPizza = <Pizza>[].obs;
+  RxList<Food> _pizzaList = <Food>[].obs;
+ 
+  RxList<Food> _currentSelectedPizza = <Food>[].obs;
 
-  // @override
   Future<void> onInit() async => await _setPizzaList();
 
   //GetX Controller function to get the all pizza data from the database
@@ -24,12 +24,12 @@ class FoodController extends GetxController {
     update();
   }
 
-  void setCurrentSelectedPizza(Pizza pizza) {
+  void setCurrentSelectedPizza(Food pizza) {
     _currentSelectedPizza.assign(pizza);
     update();
   }
 
-  void setCurrentSelectedPizzaToInitial(Pizza pizza) {
+  void setCurrentSelectedPizzaToInitial(Food pizza) {
     _currentSelectedPizza.clear();
     update();
   }
@@ -37,7 +37,7 @@ class FoodController extends GetxController {
   //gets the ListStatus
   Rx<ListStatus> get getStatus => _status;
   //get the all pizza list db
-  RxList<Pizza> get getUsersList => _pizzaList;
-
-  RxList<Pizza> get getCurrentSelectedPizza => _currentSelectedPizza;
+  RxList<Food> get getPizzaList => _pizzaList;
+//get the current selected pizza from the HomeScreen UI
+  RxList<Food> get getCurrentSelectedPizza => _currentSelectedPizza;
 }

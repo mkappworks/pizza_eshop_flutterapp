@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 class PriceDisplayCard extends StatelessWidget {
-  final Pizza pizza;
+  final Food pizza;
 
   PriceDisplayCard({required this.pizza});
 

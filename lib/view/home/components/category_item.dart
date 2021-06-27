@@ -16,8 +16,8 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () {
-        // ignore: unrelated_type_equality_checks
-        bool isSelected = _categoryController.getCurrentCategory == category;
+        bool isSelected =
+            _categoryController.getCurrentCategory.value == category;
 
         return GestureDetector(
           onTap: () => _categoryController.setCurrentCategory(category),

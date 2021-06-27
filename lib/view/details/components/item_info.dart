@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 
-import 'package:pizza_eshop_flutterapp/model/pizza.dart';
+import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
@@ -20,7 +20,7 @@ class ItemInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Obx(() {
-      Pizza _currentPizza = _foodController.getCurrentSelectedPizza[0];
+      Food _currentPizza = _foodController.getCurrentSelectedPizza[0];
       return Expanded(
         child: Container(
           padding: EdgeInsets.only(top: 20),
