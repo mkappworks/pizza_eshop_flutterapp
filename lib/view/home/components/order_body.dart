@@ -19,7 +19,7 @@ class OrderBody extends StatelessWidget {
         SubTitle(subtitle: 'Ward Gateway Apt. 908'),
         addVerticalSpace(5),
         CategoryItemList(),
-        ItemList(),
+        ItemCardList(),
       ],
     );
   }
