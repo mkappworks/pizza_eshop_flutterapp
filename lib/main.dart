@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 import 'package:pizza_eshop_flutterapp/controller/item/category_controller.dart';
+import 'package:pizza_eshop_flutterapp/controller/navigation/navigation_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/routes.dart';
@@ -13,6 +14,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(FoodController());
   Get.put(CategoryController());
+  Get.put(NavigationController());
   runApp(MyApp());
 }
 
