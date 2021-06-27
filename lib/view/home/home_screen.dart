@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 import 'package:pizza_eshop_flutterapp/view/home/components/home_app_bar.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/home_body.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/home_bottom_navigation_bar.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/order_body.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -15,16 +16,9 @@ class HomeScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: HomeAppBar(),
-      ), // HomeAppBar(),
-      body: HomeBody(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton.extended(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
-        onPressed: () {},
-        icon: Icon(Icons.shopping_bag),
-        label: Text('2 Items \$54'),
       ),
+      body: OrderBody(),
     );
   }
 }
+
