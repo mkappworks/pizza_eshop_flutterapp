@@ -7,7 +7,7 @@ import 'package:pizza_eshop_flutterapp/view/home/components/item_card_list.dart'
 import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
 import 'package:pizza_eshop_flutterapp/view/home/components/sub_title.dart';
 
-class HomeBody extends StatelessWidget {
+class OrderBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
