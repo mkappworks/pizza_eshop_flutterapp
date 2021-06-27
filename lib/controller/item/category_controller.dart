@@ -8,7 +8,7 @@ extension ParseToString on CategoryList {
   }
 }
 
-//Getx controller to track the currently select category in the homescreen
+//Getx controller to track the currently select category in the HomeScreen()
 class CategoryController extends GetxController {
   Rx<CategoryList> _currentCategory = CategoryList.Pizza.obs;
 
