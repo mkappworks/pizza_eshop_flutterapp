@@ -8,7 +8,7 @@ class FoodServiceHelper {
 // Fetch pizza list from the database or in this example from local
   Future<List<Food>> fetchPizzaList() async {
     try {
-      var jsonBody = await rootBundle.loadString('assets/sample.json');
+      var jsonBody = await rootBundle.loadString('assets/pizza_test_data.json');
       List<Food> _foodList = foodFromJson(jsonBody);
       return _foodList;
     } catch (error) {
