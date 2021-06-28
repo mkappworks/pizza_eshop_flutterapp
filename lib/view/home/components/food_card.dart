@@ -10,11 +10,11 @@ import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
 import 'package:pizza_eshop_flutterapp/view/details/detail_screen.dart';
 
-class ItemCard extends StatelessWidget {
+class FoodCard extends StatelessWidget {
   final Food pizza;
   final FoodController _foodController = Get.find();
 
-  ItemCard({required this.pizza});
+  FoodCard({required this.pizza});
 
   @override
   Widget build(BuildContext context) {

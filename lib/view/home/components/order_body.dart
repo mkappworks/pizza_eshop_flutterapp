@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
-import 'package:pizza_eshop_flutterapp/view/home/components/item_card_list.dart';
+import 'package:pizza_eshop_flutterapp/view/home/components/food_container.dart';
 import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
 import 'package:pizza_eshop_flutterapp/view/home/components/sub_title.dart';
 
@@ -17,7 +17,7 @@ class OrderBody extends StatelessWidget {
         addVerticalSpace(5),
         SubTitle(subtitle: 'Ward Gateway Apt. 908'),
         addVerticalSpace(20),
-        ItemCardList(),
+        FoodContainer(),
       ],
     );
   }
