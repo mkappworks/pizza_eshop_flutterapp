@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:pizza_eshop_flutterapp/controller/addon/add_on_controller.dart';
 import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 import 'package:pizza_eshop_flutterapp/controller/category/category_controller.dart';
 import 'package:pizza_eshop_flutterapp/controller/navigation/navigation_controller.dart';
@@ -13,6 +14,7 @@ import 'package:pizza_eshop_flutterapp/view/home/home_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(FoodController());
+  Get.put(AddOnController());
   Get.put(CategoryController());
   Get.put(NavigationController());
   runApp(MyApp());
