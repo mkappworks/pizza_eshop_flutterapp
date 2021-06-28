@@ -27,4 +27,5 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/sample.json
+    - assets/pizza_test_data.json
+    - assets/add_on_test_data.json
