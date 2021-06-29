@@ -4,11 +4,11 @@ import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class OrderButton extends StatelessWidget {
   final Size size;
-  final Function? press;
+  final Function press;
 
   OrderButton({
     required this.size,
-    this.press,
+    required this.press,
   });
 
   @override
@@ -23,7 +23,7 @@ class OrderButton extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: press as void Function()?,
+            onTap: press as void Function(),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
