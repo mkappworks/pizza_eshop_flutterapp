@@ -19,11 +19,12 @@ class OrderController extends GetxController {
   //GetX Controller function to add a order to the _orderList
   void setAddOrderToList() {
     Order order = Order(
-        food: _currentSelectedFood[0],
-        size: _currentSelectedFoodSize.value.toFirstLetterUpperCaseOfSize(),
-        addOn: _currentSelectedAddOn,
-        quantity: _currentSelectedFoodQuantity.value,
-        price: _currentSelectedFoodPrice.value,);
+      food: _currentSelectedFood[0],
+      size: _currentSelectedFoodSize.value.toFirstLetterUpperCaseOfSize(),
+      addOn: [..._currentSelectedAddOn],
+      quantity: _currentSelectedFoodQuantity.value,
+      price: _currentSelectedFoodPrice.value,
+    );
 
     List<Order> _tempList = [..._orderList, order];
 
@@ -49,8 +50,6 @@ class OrderController extends GetxController {
     _setCurrentSelectedFoodWeightCalorie(food);
 
     _setCurrentSelectedFoodPrice();
-
-    print(_orderList);
 
     update();
   }
@@ -129,7 +128,7 @@ class OrderController extends GetxController {
     _currentSelectedFoodQuantity.value = 1;
     _currentSelectedFoodSize.value = FoodSize.medium;
     _currentSelectedFoodPrice.value = 0.0;
-    _currentSelectedFoodWeightCalorie = "".obs;
+    _currentSelectedFoodWeightCalorie.value = "";
 
     update();
   }
