@@ -8,8 +8,6 @@ class FoodController extends GetxController {
   Rx<FoodListStatus> _status = FoodListStatus.loading.obs;
   RxList<Food> _pizzaList = <Food>[].obs;
 
-  RxList<Food> _currentSelectedPizza = <Food>[].obs;
-
   Future<void> onInit() async {
     super.onInit();
     await _setPizzaList();
@@ -27,20 +25,8 @@ class FoodController extends GetxController {
     update();
   }
 
-  void setCurrentSelectedPizza(Food pizza) {
-    _currentSelectedPizza.assign(pizza);
-    update();
-  }
-
-  void setCurrentSelectedPizzaToInitial(Food pizza) {
-    _currentSelectedPizza.clear();
-    update();
-  }
-
   //gets the ListStatus
   Rx<FoodListStatus> get getStatus => _status;
   //get the all pizza list db
   RxList<Food> get getPizzaList => _pizzaList;
-//get the current selected pizza from the HomeScreen UI
-  RxList<Food> get getCurrentSelectedPizza => _currentSelectedPizza;
 }
