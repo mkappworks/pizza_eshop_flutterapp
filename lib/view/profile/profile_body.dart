@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
+import 'package:pizza_eshop_flutterapp/view/components/main_title.dart';
 
 class ProfileBody extends StatelessWidget {
   @override

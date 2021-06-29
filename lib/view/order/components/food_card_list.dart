@@ -5,7 +5,7 @@ import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/model/food.dart';
 
-import 'package:pizza_eshop_flutterapp/view/home/components/food_card.dart';
+import 'package:pizza_eshop_flutterapp/view/order/components/food_card.dart';
 
 class FoodCardList extends StatelessWidget {
   final FoodController _foodController = Get.find();

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/navigation/navigation_controller.dart';
+import 'package:pizza_eshop_flutterapp/view/checkout/checkout_body.dart';
 
-import 'package:pizza_eshop_flutterapp/view/home/components/checkout_body.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/order_body.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/profile_body.dart';
+
+import 'package:pizza_eshop_flutterapp/view/order/order_body.dart';
+import 'package:pizza_eshop_flutterapp/view/profile/profile_body.dart';
 
 class HomeBody extends StatelessWidget {
   final NavigationController _navigationController = Get.find();

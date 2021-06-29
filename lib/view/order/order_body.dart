@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
-import 'package:pizza_eshop_flutterapp/view/home/components/food_container.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/main_title.dart';
-import 'package:pizza_eshop_flutterapp/view/home/components/sub_title.dart';
+import 'package:pizza_eshop_flutterapp/view/components/main_title.dart';
+import 'package:pizza_eshop_flutterapp/view/components/sub_title.dart';
+import 'package:pizza_eshop_flutterapp/view/order/components/food_container.dart';
 
 class OrderBody extends StatelessWidget {
   @override

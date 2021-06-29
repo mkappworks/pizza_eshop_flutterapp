@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
+import 'package:pizza_eshop_flutterapp/controller/order/order_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/model/food.dart';
 
@@ -11,8 +11,9 @@ import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 import 'package:pizza_eshop_flutterapp/view/details/detail_screen.dart';
 
 class FoodCard extends StatelessWidget {
+  final OrderController _orderController = Get.find();
+
   final Food pizza;
-  final FoodController _foodController = Get.find();
 
   FoodCard({required this.pizza});
 
@@ -89,7 +90,7 @@ class FoodCard extends StatelessWidget {
                         addVerticalSpace(35),
                         InkWell(
                           onTap: () {
-                            _foodController.setCurrentSelectedPizza(pizza);
+                            _orderController.setCurrentSelectedFood(pizza);
                             Get.toNamed(DetailScreen.routeName);
                           },
                           child: Container(
