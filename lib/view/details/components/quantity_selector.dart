@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:pizza_eshop_flutterapp/controller/order/order_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
+import 'package:pizza_eshop_flutterapp/view/details/components/quantity_icon_button.dart';
+
 class QuantitySelector extends StatelessWidget {
+  final OrderController _orderController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,36 +22,22 @@ class QuantitySelector extends StatelessWidget {
           child: Row(
             children: [
               QuantityIconButton(
-                onPress: () {},
+                onPress: () => _orderController
+                    .setCurrentSelectedFoodQuantity(FoodQuantity.decrement),
                 icon: Icons.remove,
               ),
               addHorizontalSpace(15.0),
-              Text('1', style: Theme.of(context).textTheme.headline1),
+              Obx(() => Text(
+                  '${_orderController.getCurrentSelectedFoodQuantity}',
+                  style: Theme.of(context).textTheme.headline1)),
               addHorizontalSpace(15.0),
               QuantityIconButton(
-                onPress: () {},
+                onPress: () => _orderController
+                    .setCurrentSelectedFoodQuantity(FoodQuantity.increment),
                 icon: Icons.add,
               ),
             ],
           ),
         ));
-  }
-}
-
-class QuantityIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function onPress;
-
-  QuantityIconButton({
-    required this.icon,
-    required this.onPress,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPress as void Function()?,
-      child: Icon(icon),
-    );
   }
 }

@@ -1,59 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:pizza_eshop_flutterapp/controller/order/order_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
+import 'package:pizza_eshop_flutterapp/view/details/components/size_button.dart';
 
 class SizeSelector extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: kSecondaryColor),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(0.0),
-        child: Row(
-          children: [
-            SizeButton(
-              onPress: () {},
-              label: 'M',
-              isSelected: true,
-            ),
-            SizeButton(
-              onPress: () {},
-              label: 'L',
-              isSelected: false,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class SizeButton extends StatelessWidget {
-  final String label;
-  final Function onPress;
-  final bool isSelected;
-
-  SizeButton({
-    required this.label,
-    required this.onPress,
-    required this.isSelected,
-  });
+  final OrderController _orderController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPress as void Function()?,
+      onTap: () => _orderController.setCurrentSelectedFoodSize(),
       child: Container(
-        padding: EdgeInsets.all(8.0),
-        width: 50,
         decoration: BoxDecoration(
-          color: isSelected ? kSecondaryColor : Colors.transparent,
+          border: Border.all(color: kSecondaryColor),
+          borderRadius: BorderRadius.circular(8.0),
         ),
-        child: Center(
-          child: Text(label, style: Theme.of(context).textTheme.headline1),
+        child: Padding(
+          padding: EdgeInsets.all(0.0),
+          child: Row(
+            children: [
+              SizeButton(foodSize: FoodSize.medium),
+              SizeButton(foodSize: FoodSize.large),
+            ],
+          ),
         ),
       ),
     );

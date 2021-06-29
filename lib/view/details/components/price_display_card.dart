@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'package:pizza_eshop_flutterapp/model/food.dart';
+import 'package:pizza_eshop_flutterapp/controller/order/order_controller.dart';
 
 class PriceDisplayCard extends StatelessWidget {
-  final Food pizza;
-
-  PriceDisplayCard({required this.pizza});
+  final OrderController _orderController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('\$${pizza.mediumprice}',
-          style: Theme.of(context).textTheme.headline1),
+      child: Obx(
+        () => Text('\$${_orderController.getCurrentSelectedFoodPrice}',
+            style: Theme.of(context).textTheme.headline1),
+      ),
     );
   }
 }

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:pizza_eshop_flutterapp/controller/addon/add_on_controller.dart';
 import 'package:pizza_eshop_flutterapp/view/details/components/add_on_item_card.dart';
 
 class AddOnItemList extends StatelessWidget {
+  final AddOnController _addOnController = Get.find();
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,30 +14,10 @@ class AddOnItemList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            AddOnItemCard(
-              label: 'Cheese',
-              image: 'assets/images/cheese.png',
-              isSelected: true,
-              onPress: () {},
-            ),
-            AddOnItemCard(
-              label: 'Bacon',
-              image: 'assets/images/bacon.png',
-              isSelected: false,
-              onPress: () {},
-            ),
-            AddOnItemCard(
-              label: 'BellPepper',
-              image: 'assets/images/bellpepper.png',
-              isSelected: false,
-              onPress: () {},
-            ),
-            AddOnItemCard(
-              label: 'Chicken',
-              image: 'assets/images/chicken.png',
-              isSelected: true,
-              onPress: () {},
-            ),
+            ...List.generate(
+                _addOnController.getAddOnList.length,
+                (index) =>
+                    AddOnItemCard(addOn: _addOnController.getAddOnList[index]))
           ],
         ),
       ),
