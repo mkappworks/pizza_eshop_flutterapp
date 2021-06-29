@@ -1,3 +1,5 @@
+import 'package:pizza_eshop_flutterapp/model/add_on.dart';
+
 enum OrderFunction { add, remove }
 enum FoodSize { medium, large }
 enum FoodQuantity { increment, decrement }
@@ -6,21 +8,31 @@ enum FoodListStatus { loading, loaded, empty }
 enum AddOnListStatus { loading, loaded, empty }
 enum CategoryList { Pizza, Chicken, Beverages, Desserts }
 
-extension ParseStringFoodSize  on FoodSize {
+extension ParseFoodSizeToString on FoodSize {
   String toFirstLetterUpperCaseOfSize() {
     return this.toString().split('.').last.toUpperCase()[0];
   }
 }
 
-extension ParseStringBodyList  on BodyList {
+extension ParseBodyListToString on BodyList {
   String toShortString() {
     return this.toString().split('.').last;
   }
 }
 
-extension ParseStringCategoryList on CategoryList {
+extension ParseCategoryListToString on CategoryList {
   String toShortString() {
     return this.toString().split('.').last;
   }
 }
 
+extension ParseAddOnListToString on List<AddOn> {
+  String toCombinedString() {
+    String combinedTitle = "";
+    this.forEach((addOn) {
+      combinedTitle += '${addOn.title} ';
+    });
+
+    return combinedTitle;
+  }
+}
