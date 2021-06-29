@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
-import 'package:pizza_eshop_flutterapp/view/components/custom_info_container.dart';
+
+import 'package:pizza_eshop_flutterapp/view/checkout/components/order_card_list.dart';
 import 'package:pizza_eshop_flutterapp/view/components/main_title.dart';
 
 class CheckoutBody extends StatelessWidget {
@@ -12,14 +14,7 @@ class CheckoutBody extends StatelessWidget {
       children: [
         MainTitle(title: 'Checkout'),
         addVerticalSpace(25),
-        CustomInfoContainer(
-          widgetList: [
-            Row(children: [
-              
-            ],)
-           
-          ],
-        )
+        OrderCardList(),
       ],
     );
   }
