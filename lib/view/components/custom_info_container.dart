@@ -18,10 +18,13 @@ class CustomInfoContainer extends StatelessWidget {
             topRight: Radius.circular(30),
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: widgetList,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: widgetList,
+          ),
         ),
       ),
     );
