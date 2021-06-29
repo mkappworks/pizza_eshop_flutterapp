@@ -5,6 +5,7 @@ import 'package:pizza_eshop_flutterapp/controller/food/food_controller.dart';
 
 import 'package:pizza_eshop_flutterapp/model/food.dart';
 
+import 'package:pizza_eshop_flutterapp/view/components/custom_info_container.dart';
 import 'package:pizza_eshop_flutterapp/view/order/components/food_card.dart';
 
 class FoodCardList extends StatelessWidget {
@@ -16,32 +17,14 @@ class FoodCardList extends StatelessWidget {
       () {
         RxList<Food> _pizzaList = _foodController.getPizzaList;
 
-        return Expanded(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
+        return CustomInfoContainer(widgetList: [
+          ...List.generate(
+            _pizzaList.length,
+            (index) => FoodCard(
+              pizza: _pizzaList[index],
             ),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  ...List.generate(
-                    _pizzaList.length,
-                    (index) => FoodCard(pizza: _pizzaList[index]),
-                  )
-                ],
-              ),
-            ),
-          ),
-        );
+          )
+        ]);
       },
     );
   }

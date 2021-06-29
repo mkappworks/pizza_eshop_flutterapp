@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
+import 'package:pizza_eshop_flutterapp/view/components/custom_info_container.dart';
 import 'package:pizza_eshop_flutterapp/view/components/main_title.dart';
 
 class CheckoutBody extends StatelessWidget {
@@ -11,18 +12,14 @@ class CheckoutBody extends StatelessWidget {
       children: [
         MainTitle(title: 'Checkout'),
         addVerticalSpace(25),
-        Expanded(
-            child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
-            ),
-          ),
-        )),
+        CustomInfoContainer(
+          widgetList: [
+            Row(children: [
+              
+            ],)
+           
+          ],
+        )
       ],
     );
   }

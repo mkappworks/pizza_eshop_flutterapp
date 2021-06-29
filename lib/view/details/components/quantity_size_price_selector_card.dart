@@ -12,7 +12,7 @@ class QuantitySizePriceSelectorCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          QuantitySelector(),
+          DetailsQuantitySelector(),
           SizeSelector(),
           PriceDisplayCard(),
         ],
