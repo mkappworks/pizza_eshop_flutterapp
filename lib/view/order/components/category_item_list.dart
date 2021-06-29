@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:pizza_eshop_flutterapp/controller/category/category_controller.dart';
+import 'package:pizza_eshop_flutterapp/extensions/extensions.dart';
 
 import 'package:pizza_eshop_flutterapp/view/order/components/category_item.dart';
 

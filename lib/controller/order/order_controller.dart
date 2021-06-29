@@ -1,19 +1,11 @@
 import 'package:get/get.dart';
 
+import 'package:pizza_eshop_flutterapp/extensions/extensions.dart';
+
 import 'package:pizza_eshop_flutterapp/model/add_on.dart';
 import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 import 'package:pizza_eshop_flutterapp/model/order.dart';
-
-enum OrderFunction { add, remove }
-enum FoodSize { medium, large }
-enum FoodQuantity { increment, decrement }
-
-extension ParseToString on FoodSize {
-  String toFirstLetterUpperCaseOfSize() {
-    return this.toString().split('.').last.toUpperCase()[0];
-  }
-}
 
 class OrderController extends GetxController {
   RxList<Order> _orderList = <Order>[].obs;
@@ -29,9 +21,9 @@ class OrderController extends GetxController {
     Order order = Order(
         food: _currentSelectedFood[0],
         size: _currentSelectedFoodSize.value.toFirstLetterUpperCaseOfSize(),
-        addOn: _currentSelectedAddOn.value,
+        addOn: _currentSelectedAddOn,
         quantity: _currentSelectedFoodQuantity.value,
-        price: _currentSelectedFoodPrice.value);
+        price: _currentSelectedFoodPrice.value,);
 
     List<Order> _tempList = [..._orderList, order];
 

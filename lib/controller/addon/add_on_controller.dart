@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/addon/helper/add_on_service_helper.dart';
 
-import 'package:pizza_eshop_flutterapp/model/add_on.dart';
+import 'package:pizza_eshop_flutterapp/extensions/extensions.dart';
 
-enum AddOnListStatus { loading, loaded, empty }
+import 'package:pizza_eshop_flutterapp/model/add_on.dart';
 
 class AddOnController extends GetxController {
   Rx<AddOnListStatus> _status = AddOnListStatus.loading.obs;

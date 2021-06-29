@@ -1,12 +1,6 @@
 import 'package:get/get.dart';
 
-enum CategoryList { Pizza, Chicken, Beverages, Desserts }
-
-extension ParseToString on CategoryList {
-  String toShortString() {
-    return this.toString().split('.').last;
-  }
-}
+import 'package:pizza_eshop_flutterapp/extensions/extensions.dart';
 
 //Getx controller to track the currently select category in the HomeScreen()
 class CategoryController extends GetxController {

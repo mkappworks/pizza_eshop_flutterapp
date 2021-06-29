@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
-import 'package:pizza_eshop_flutterapp/controller/food/helper/food_service_helper.dart';
-import 'package:pizza_eshop_flutterapp/model/food.dart';
 
-enum FoodListStatus { loading, loaded, empty }
+import 'package:pizza_eshop_flutterapp/controller/food/helper/food_service_helper.dart';
+
+import 'package:pizza_eshop_flutterapp/extensions/extensions.dart';
+
+import 'package:pizza_eshop_flutterapp/model/food.dart';
 
 class FoodController extends GetxController {
   Rx<FoodListStatus> _status = FoodListStatus.loading.obs;
