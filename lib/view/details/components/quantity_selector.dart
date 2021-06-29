@@ -19,6 +19,7 @@ class DetailsQuantitySelector extends StatelessWidget {
         incrementFunction: () => _orderController
             .setCurrentSelectedFoodQuantity(FoodQuantity.increment),
         quantity: '${_orderController.getCurrentSelectedFoodQuantity}',
+        textStyle: Theme.of(context).textTheme.headline1!,
       ),
     );
   }

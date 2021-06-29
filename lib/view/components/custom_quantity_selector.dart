@@ -6,12 +6,14 @@ class CustomQuantitySelector extends StatelessWidget {
   final Function decrementFunction;
   final Function incrementFunction;
   final String quantity;
+  final TextStyle textStyle;
 
   CustomQuantitySelector({
     required this.height,
     required this.decrementFunction,
     required this.incrementFunction,
     required this.quantity,
+    required this.textStyle,
   });
 
   @override
@@ -29,7 +31,10 @@ class CustomQuantitySelector extends StatelessWidget {
             icon: Icon(Icons.remove),
             padding: EdgeInsets.symmetric(horizontal: 5),
           ),
-          Text(quantity, style: Theme.of(context).textTheme.headline1),
+          Text(
+            quantity,
+            style: textStyle,
+          ),
           IconButton(
             onPressed: incrementFunction as void Function(),
             icon: Icon(Icons.add),
