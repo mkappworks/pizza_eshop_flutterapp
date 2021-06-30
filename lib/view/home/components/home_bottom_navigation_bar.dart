@@ -32,6 +32,7 @@ class HomeBottomNavigationBar extends StatelessWidget {
           color: Colors.black,
         ),
       ],
+      index: _navigationController.getCurrentBody(),
       onTap: (index) => _navigationController.setCurrentBody(index),
     );
   }
