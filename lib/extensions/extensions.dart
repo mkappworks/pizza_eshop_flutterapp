@@ -1,6 +1,5 @@
 import 'package:pizza_eshop_flutterapp/model/add_on.dart';
 
-enum OrderFunction { add, remove }
 enum FoodSize { medium, large }
 enum FoodQuantity { increment, decrement }
 enum BodyList { Order, Checkout, Profile }
