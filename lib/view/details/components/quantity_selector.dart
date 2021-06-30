@@ -15,10 +15,10 @@ class DetailsQuantitySelector extends StatelessWidget {
       () => CustomQuantitySelector(
         height: 60,
         decrementFunction: () => _orderController
-            .setCurrentSelectedFoodQuantity(FoodQuantity.decrement),
+            .setCurrentSelectedOrderQuantity(FoodQuantity.decrement),
         incrementFunction: () => _orderController
-            .setCurrentSelectedFoodQuantity(FoodQuantity.increment),
-        quantity: '${_orderController.getCurrentSelectedFoodQuantity}',
+            .setCurrentSelectedOrderQuantity(FoodQuantity.increment),
+        quantity: '${_orderController.getCurrentSelectedOrderQuantity}',
         textStyle: Theme.of(context).textTheme.headline1!,
       ),
     );

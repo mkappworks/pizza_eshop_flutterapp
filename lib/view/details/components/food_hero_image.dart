@@ -13,7 +13,7 @@ class FoodHeroImage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Obx(
       () {
-        Food _currentPizza = _orderController.getCurrentSelectedFood[0];
+        Food _currentPizza = _orderController.getCurrentSelectedOrder[0];
         return Center(
           child: Hero(
             tag: _currentPizza.title,

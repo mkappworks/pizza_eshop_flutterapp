@@ -20,7 +20,7 @@ class SizeButton extends StatelessWidget {
           padding: EdgeInsets.all(8.0),
           width: 50,
           decoration: BoxDecoration(
-            color: _orderController.getCurrentSelectedFoodSize.value != foodSize
+            color: _orderController.getCurrentSelectedOrderSize.value != foodSize
                 ? Colors.transparent
                 : kSecondaryColor,
           ),

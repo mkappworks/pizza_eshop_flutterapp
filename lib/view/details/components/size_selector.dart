@@ -14,7 +14,7 @@ class SizeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => _orderController.setCurrentSelectedFoodSize(),
+      onTap: () => _orderController.setCurrentSelectedOrderSize(),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: kSecondaryColor),

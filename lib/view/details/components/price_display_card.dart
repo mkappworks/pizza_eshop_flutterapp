@@ -10,7 +10,8 @@ class PriceDisplayCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Obx(
-        () => Text('\$${_orderController.getCurrentSelectedFoodPrice}',
+        () => Text(
+            '\$${_orderController.getCurrentSelectedOrderUnitPrice * _orderController.getCurrentSelectedOrderQuantity.value}',
             style: Theme.of(context).textTheme.headline1),
       ),
     );
