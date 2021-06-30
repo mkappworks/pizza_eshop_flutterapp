@@ -26,9 +26,13 @@ const TextTheme kTextThemeDefault = TextTheme(
   headline6: TextStyle(
       color: kPrimaryTextColor, fontWeight: FontWeight.w700, fontSize: 12),
   subtitle1: TextStyle(
-      color: kPrimaryTextColor, fontSize: 18, fontWeight: FontWeight.w400),
+      color: kPrimarySubtitleTextColor,
+      fontSize: 14,
+      fontWeight: FontWeight.w400),
   subtitle2: TextStyle(
-      color: kPrimaryTextColor, fontSize: 14, fontWeight: FontWeight.w400),
+      color: kSecondarySubtitleTextColor,
+      fontSize: 14,
+      fontWeight: FontWeight.w400),
 );
 
 const kPrimaryAppBarTitle = 'Pizza';
