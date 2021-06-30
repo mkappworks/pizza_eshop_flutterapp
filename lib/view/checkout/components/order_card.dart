@@ -8,8 +8,8 @@ import 'package:pizza_eshop_flutterapp/extensions/extensions.dart';
 
 import 'package:pizza_eshop_flutterapp/model/order.dart';
 
+import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
-import 'package:pizza_eshop_flutterapp/view/components/custom_quantity_selector.dart';
 
 class OrderCard extends StatelessWidget {
   final OrderController _orderController = Get.find();
@@ -22,72 +22,91 @@ class OrderCard extends StatelessWidget {
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
       actionExtentRatio: 0.25,
+      actions: <Widget>[
+        IconSlideAction(
+          caption: 'Remove',
+          color: kBackgroundColor,
+          icon: Icons.remove,
+          onTap: () => {
+            _orderController.updateOrderFromOrderList(order, FoodQuantity.decrement)
+          },
+          closeOnTap: false,
+        ),
+        IconSlideAction(
+          caption: 'Add',
+          color: kBackgroundColor,
+          icon: Icons.add,
+          onTap: () => {
+            _orderController.updateOrderFromOrderList(order, FoodQuantity.increment)
+          },
+          closeOnTap: false,
+        ),
+      ],
       secondaryActions: <Widget>[
         IconSlideAction(
           caption: 'Delete',
           color: Colors.red,
           icon: Icons.delete,
-          onTap: () => _orderController.setRemoveOrderFromList(order),
+          onTap: () => _orderController.removeOrderFromOrderList(order),
         ),
       ],
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(color: Colors.grey.shade400),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(color: Colors.grey.shade400),
+          ),
+        ),
+        child: Row(
+          children: [
+            addHorizontalSpace(15),
+            Image.asset(
+              order.food.image,
+              width: 100,
+            ),
+            addHorizontalSpace(20),
+            Text('${order.quantity}     x',
+                style: Theme.of(context).textTheme.headline4),
+            addHorizontalSpace(20),
+            Container(
+              width: 150,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    order.food.title,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline2
+                        ?.copyWith(fontWeight: FontWeight.w600),
+                  ),
+                  addVerticalSpace(5.0),
+                  Text(
+                    'Size-${order.size}',
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                  addVerticalSpace(10.0),
+                  Wrap(
+                    children: [
+                      ...List.generate(
+                        order.addOn.length,
+                        (index) => Text(
+                          '${order.addOn[index].title} ',
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          order.food.title,
-                          style: Theme.of(context).textTheme.headline2,
-                        ),
-                        addVerticalSpace(5.0),
-                        Text(order.size),
-                        addVerticalSpace(5.0),
-                        Text(order.addOn.toCombinedString()),
-                        addVerticalSpace(5.0),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          '\$${order.price}',
-                          style: Theme.of(context).textTheme.headline2,
-                        ),
-                        addVerticalSpace(10),
-                        CustomQuantitySelector(
-                          height: 40,
-                          decrementFunction: () => {},
-                          incrementFunction: () => {},
-                          quantity: '${order.quantity}',
-                          textStyle: Theme.of(context).textTheme.headline3!,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+            Text(
+              '\$${order.price * order.quantity}',
+              style: Theme.of(context).textTheme.headline2,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
