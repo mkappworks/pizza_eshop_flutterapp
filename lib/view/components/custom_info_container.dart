@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomInfoContainer extends StatelessWidget {
+  final Widget? headerWidget;
   final List<Widget> widgetList;
 
-  CustomInfoContainer({required this.widgetList});
+  CustomInfoContainer({required this.widgetList, this.headerWidget});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.only(top: 20),
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -18,13 +18,20 @@ class CustomInfoContainer extends StatelessWidget {
             topRight: Radius.circular(30),
           ),
         ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: widgetList,
-          ),
+        child: Column(
+          children: [
+            headerWidget ?? SizedBox.shrink(),
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: widgetList,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
