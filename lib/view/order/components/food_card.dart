@@ -28,7 +28,7 @@ class FoodCard extends StatelessWidget {
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.only(left: 10.0, top: 8.0),
                   child: Hero(
                     tag: pizza.title,
                     child: Image.asset(pizza.image),
@@ -37,7 +37,7 @@ class FoodCard extends StatelessWidget {
               ),
               Container(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 10, top: 30),
+                  padding: EdgeInsets.only(left: 20.0, top: 30.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +78,7 @@ class FoodCard extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 60, top: 30),
+                  padding: EdgeInsets.only(left: 30, top: 30),
                   child: Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,7 +90,7 @@ class FoodCard extends StatelessWidget {
                         addVerticalSpace(35),
                         InkWell(
                           onTap: () {
-                            _orderController.setCurrentSelectedFood(pizza);
+                            _orderController.setCurrentSelectedOrder(pizza);
                             Get.toNamed(DetailScreen.routeName);
                           },
                           child: Container(
