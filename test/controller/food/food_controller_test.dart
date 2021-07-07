@@ -65,7 +65,6 @@ void main() {
       () async {
     //ASSERT
     List<Food> _actualList = [];
-    List<Food> _matchList = FoodList.shared.fetchList();
 
     //ACT
     expect(_actualList.length, 0);
