@@ -23,7 +23,6 @@ class FoodCard extends StatelessWidget {
       children: [
         Container(
           height: 150,
-          color: Colors.grey.withOpacity(0),
           child: Row(
             children: [
               Container(
