@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
@@ -11,10 +13,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final scaleHeigth = height / kMockupHeight;
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.0),
+        preferredSize: Size.fromHeight(50.0 * scaleHeigth),
         child: HomeAppBar(),
       ),
       body: HomeBody(),

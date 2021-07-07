@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'package:pizza_eshop_flutterapp/controller/addon/add_on_controller.dart';
@@ -19,7 +20,11 @@ void main() {
   Get.put(OrderController());
   Get.put(CategoryController());
   Get.put(NavigationController());
-  runApp(MyApp());
+  // Lock the entire app orientation to Portrait mode
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {

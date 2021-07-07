@@ -8,6 +8,8 @@ import 'package:pizza_eshop_flutterapp/model/add_on.dart';
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
 
+import 'package:pizza_eshop_flutterapp/view/components/custom_label.dart';
+
 class AddOnItemCard extends StatelessWidget {
   final OrderController _orderController = Get.find();
 
@@ -19,8 +21,13 @@ class AddOnItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    final scaleHeigth = height / kMockupHeight;
+    final scaleWidth = width / kMockupWidth;
+
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: 15.0 * scaleWidth),
       child: InkWell(
         onTap: () => _orderController.setCurrentSelectedAddOn(addOn),
         child: Obx(
@@ -33,18 +40,19 @@ class AddOnItemCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.symmetric(
+                  horizontal: 10.0 * scaleWidth, vertical: 10.0 * scaleHeigth),
               child: Column(
                 children: [
                   Container(
-                    width: 75,
-                    height: 50,
+                    width: 75.0 * scaleWidth,
+                    height: 50.0 * scaleHeigth,
                     child: Image.asset(addOn.image),
                   ),
-                  addVerticalSpace(15.0),
-                  Text(
-                    addOn.title,
-                    style: Theme.of(context).textTheme.headline4,
+                  addVerticalSpace(15.0 * scaleHeigth),
+                  CustomLabel(
+                    label: addOn.title,
+                    style: Theme.of(context).textTheme.headline4!,
                   )
                 ],
               ),

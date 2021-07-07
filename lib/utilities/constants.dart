@@ -37,3 +37,6 @@ const TextTheme kTextThemeDefault = TextTheme(
 
 const kPrimaryAppBarTitle = 'Pizza';
 const kSecondaryAppBarTitle = 'Shop';
+
+const double kMockupWidth = 428.0;
+const double kMockupHeight = 926.0;

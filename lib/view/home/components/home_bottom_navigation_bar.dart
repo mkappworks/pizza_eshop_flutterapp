@@ -8,14 +8,17 @@ import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class HomeBottomNavigationBar extends StatelessWidget {
   final NavigationController _navigationController = Get.find();
-  
+
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final scaleHeigth = height / kMockupHeight;
+
     return CurvedNavigationBar(
       color: kBackgroundColor,
       backgroundColor: Colors.white,
       buttonBackgroundColor: Colors.transparent,
-      height: 60.0,
+      height: 60.0 * scaleHeigth,
       animationDuration: Duration(milliseconds: 200),
       animationCurve: Curves.bounceInOut,
       items: <Widget>[

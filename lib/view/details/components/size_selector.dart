@@ -20,14 +20,11 @@ class SizeSelector extends StatelessWidget {
           border: Border.all(color: kSecondaryColor),
           borderRadius: BorderRadius.circular(8.0),
         ),
-        child: Padding(
-          padding: EdgeInsets.all(0.0),
-          child: Row(
-            children: [
-              SizeButton(foodSize: FoodSize.medium),
-              SizeButton(foodSize: FoodSize.large),
-            ],
-          ),
+        child: Row(
+          children: [
+            SizeButton(foodSize: FoodSize.medium),
+            SizeButton(foodSize: FoodSize.large),
+          ],
         ),
       ),
     );

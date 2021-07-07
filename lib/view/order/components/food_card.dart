@@ -19,24 +19,36 @@ class FoodCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    final scaleHeigth = height / kMockupHeight;
+    final scaleWidth = width / kMockupWidth;
+
     return Column(
       children: [
         Container(
-          height: 150,
+          height: 150 * scaleHeigth,
           child: Row(
             children: [
               Container(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 10.0, top: 8.0),
+                  padding: EdgeInsets.only(
+                    left: 10.0 * scaleWidth,
+                    top: 8.0 * scaleHeigth,
+                  ),
                   child: Hero(
                     tag: pizza.title,
-                    child: Image.asset(pizza.image),
+                    child: Image.asset(
+                      pizza.image,
+                      scale: scaleWidth,
+                    ),
                   ),
                 ),
               ),
               Container(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 20.0, top: 30.0),
+                  padding: EdgeInsets.only(
+                      left: 20.0 * scaleWidth, top: 30.0 * scaleHeigth),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,11 +57,12 @@ class FoodCard extends StatelessWidget {
                         pizza.title,
                         style: Theme.of(context).textTheme.headline2,
                       ),
-                      addVerticalSpace(5.0),
+                      addVerticalSpace(5.0 * scaleHeigth),
                       Text(
                         '${pizza.mediumweight} | ${pizza.mediumcalorie}',
+                        textScaleFactor: scaleWidth,
                       ),
-                      addVerticalSpace(20.0),
+                      addVerticalSpace(20.0 * scaleHeigth),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.grey.withOpacity(0.2),
@@ -58,13 +71,18 @@ class FoodCard extends StatelessWidget {
                           ),
                         ),
                         child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 1, horizontal: 6),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 1.0 * scaleHeigth,
+                              horizontal: 6.0 * scaleWidth),
                           child: Row(
                             children: [
-                              Icon(Icons.av_timer_sharp),
+                              Transform.scale(
+                                scale: scaleWidth,
+                                child: Icon(Icons.av_timer_sharp),
+                              ),
                               Text(
                                 ' - ${pizza.time}mins',
+                                textScaleFactor: scaleWidth,
                                 style: TextStyle(color: kPrimaryTextColor),
                               ),
                             ],
@@ -77,16 +95,18 @@ class FoodCard extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 30, top: 30),
+                  padding: EdgeInsets.only(
+                      left: 30.0 * scaleWidth, top: 30.0 * scaleHeigth),
                   child: Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           '\$${pizza.mediumprice}',
+                          textScaleFactor: scaleWidth,
                           style: Theme.of(context).textTheme.headline2,
                         ),
-                        addVerticalSpace(35),
+                        addVerticalSpace(35.0 * scaleHeigth),
                         InkWell(
                           onTap: () {
                             _orderController.setCurrentSelectedOrder(pizza);
@@ -101,8 +121,13 @@ class FoodCard extends StatelessWidget {
                               shape: BoxShape.rectangle,
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Icon(Icons.add),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 5.0 * scaleHeigth,
+                                  horizontal: 5.0 * scaleWidth),
+                              child: Transform.scale(
+                                scale: scaleWidth,
+                                child: Icon(Icons.add),
+                              ),
                             ),
                           ),
                         )

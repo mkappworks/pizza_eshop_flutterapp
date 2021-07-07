@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+
+import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
-import 'package:pizza_eshop_flutterapp/view/components/main_title.dart';
+
+import 'package:pizza_eshop_flutterapp/view/components/custom_label.dart';
 
 class ProfileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    final scaleHeigth = height / kMockupHeight;
+    final scaleWidth = width / kMockupWidth;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        MainTitle(title: 'Profile'),
-        addVerticalSpace(25),
+        CustomLabel(
+          label: 'Profile',
+          style: Theme.of(context).textTheme.headline1!,
+        ),
+        addVerticalSpace(25 * scaleHeigth),
         Expanded(
             child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15.0 * scaleWidth),
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.white,

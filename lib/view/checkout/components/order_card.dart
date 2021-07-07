@@ -10,6 +10,7 @@ import 'package:pizza_eshop_flutterapp/model/order.dart';
 
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 import 'package:pizza_eshop_flutterapp/utilities/sized_box_functions.dart';
+import 'package:pizza_eshop_flutterapp/view/components/custom_label.dart';
 
 class OrderCard extends StatelessWidget {
   final OrderController _orderController = Get.find();
@@ -19,6 +20,11 @@ class OrderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    final scaleHeigth = height / kMockupHeight;
+    final scaleWidth = width / kMockupWidth;
+
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
       actionExtentRatio: 0.25,
@@ -28,7 +34,8 @@ class OrderCard extends StatelessWidget {
           color: kBackgroundColor,
           icon: Icons.remove,
           onTap: () => {
-            _orderController.updateOrderFromOrderList(order, FoodQuantity.decrement)
+            _orderController.updateOrderFromOrderList(
+                order, FoodQuantity.decrement)
           },
           closeOnTap: false,
         ),
@@ -37,7 +44,8 @@ class OrderCard extends StatelessWidget {
           color: kBackgroundColor,
           icon: Icons.add,
           onTap: () => {
-            _orderController.updateOrderFromOrderList(order, FoodQuantity.increment)
+            _orderController.updateOrderFromOrderList(
+                order, FoodQuantity.increment)
           },
           closeOnTap: false,
         ),
@@ -51,7 +59,7 @@ class OrderCard extends StatelessWidget {
         ),
       ],
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: 10.0 * scaleHeigth),
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(color: Colors.grey.shade400),
@@ -59,41 +67,41 @@ class OrderCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            addHorizontalSpace(15),
+            addHorizontalSpace(10 * scaleWidth),
             Image.asset(
               order.food.image,
-              width: 100,
+              width: 100 * scaleWidth,
             ),
-            addHorizontalSpace(20),
-            Text('${order.quantity}     x',
-                style: Theme.of(context).textTheme.headline4),
-            addHorizontalSpace(20),
+            CustomLabel(
+              label: '${order.quantity}     x',
+              style: Theme.of(context).textTheme.headline4!,
+            ),
             Container(
-              width: 150,
+              width: 150 * scaleWidth,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    order.food.title,
+                  CustomLabel(
+                    label: order.food.title,
                     style: Theme.of(context)
                         .textTheme
-                        .headline2
-                        ?.copyWith(fontWeight: FontWeight.w600),
+                        .headline2!
+                        .copyWith(fontWeight: FontWeight.w600),
                   ),
-                  addVerticalSpace(5.0),
-                  Text(
-                    'Size-${order.size}',
-                    style: Theme.of(context).textTheme.subtitle1,
+                  addVerticalSpace(5.0 * scaleHeigth),
+                  CustomLabel(
+                    label: 'Size-${order.size}',
+                    style: Theme.of(context).textTheme.subtitle1!,
                   ),
-                  addVerticalSpace(10.0),
+                  addVerticalSpace(10.0 * scaleHeigth),
                   Wrap(
                     children: [
                       ...List.generate(
                         order.addOn.length,
-                        (index) => Text(
-                          '${order.addOn[index].title} ',
-                          style: Theme.of(context).textTheme.subtitle1,
+                        (index) => CustomLabel(
+                          label: '${order.addOn[index].title} ',
+                          style: Theme.of(context).textTheme.subtitle1!,
                         ),
                       ),
                     ],
@@ -101,9 +109,9 @@ class OrderCard extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              '\$${order.price * order.quantity}',
-              style: Theme.of(context).textTheme.headline2,
+            CustomLabel(
+              label: '\$${order.price * order.quantity}',
+              style: Theme.of(context).textTheme.headline2!,
             ),
           ],
         ),

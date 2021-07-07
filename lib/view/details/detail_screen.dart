@@ -10,10 +10,13 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final scaleHeigth = height / kMockupHeight;
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.0),
+        preferredSize: Size.fromHeight(50.0 * scaleHeigth),
         child: DetailAppBar(),
       ),
       body: DetailBody(),

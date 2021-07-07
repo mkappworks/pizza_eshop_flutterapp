@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:pizza_eshop_flutterapp/utilities/constants.dart';
 
 class CustomQuantitySelector extends StatelessWidget {
@@ -18,6 +19,9 @@ class CustomQuantitySelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final scaleWidth = width / kMockupWidth;
+
     return Container(
       height: height,
       decoration: BoxDecoration(
@@ -28,17 +32,20 @@ class CustomQuantitySelector extends StatelessWidget {
         children: [
           IconButton(
             onPressed: decrementFunction as void Function(),
+            iconSize: 24.0 * scaleWidth,
             icon: Icon(Icons.remove),
-            padding: EdgeInsets.symmetric(horizontal: 5),
+            padding: EdgeInsets.symmetric(horizontal: 5.0 * scaleWidth),
           ),
           Text(
             quantity,
+            textScaleFactor: scaleWidth,
             style: textStyle,
           ),
           IconButton(
             onPressed: incrementFunction as void Function(),
+            iconSize: 24.0 * scaleWidth,
             icon: Icon(Icons.add),
-            padding: EdgeInsets.symmetric(horizontal: 5),
+            padding: EdgeInsets.symmetric(horizontal: 5.0 * scaleWidth),
           )
         ],
       ),

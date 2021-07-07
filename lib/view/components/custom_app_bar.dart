@@ -17,6 +17,9 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final scaleWidth = width / kMockupWidth;
+
     return AppBar(
       backgroundColor: kBackgroundColor,
       elevation: 0,
@@ -24,7 +27,7 @@ class CustomAppBar extends StatelessWidget {
       flexibleSpace: SafeArea(
         bottom: false,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15 * scaleWidth),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -33,6 +36,7 @@ class CustomAppBar extends StatelessWidget {
                 child: leadingWidget,
               ),
               RichText(
+                textScaleFactor: scaleWidth,
                 text: TextSpan(
                   style: Theme.of(context)
                       .textTheme
