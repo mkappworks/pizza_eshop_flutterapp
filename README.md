@@ -37,3 +37,8 @@ The folder structure of this app is explained below:
 | **src/views**      | Contains all the UI elements. Separate into different screens and within which contains reusable component widgets         |
 | **pubspec.yaml**   | Contains pub dependencies as well as     |
 
+## App Preview
+
+![Untitled](https://user-images.githubusercontent.com/76746881/124842332-ee480b80-dfac-11eb-9286-bcb6f585dd8d.png)
+
+
