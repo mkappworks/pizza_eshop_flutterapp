@@ -17,14 +17,17 @@ class FoodCardList extends StatelessWidget {
       () {
         RxList<Food> _pizzaList = _foodController.getPizzaList;
 
-        return CustomInfoContainer(widgetList: [
-          ...List.generate(
-            _pizzaList.length,
-            (index) => FoodCard(
-              pizza: _pizzaList[index],
-            ),
-          )
-        ]);
+        return CustomInfoContainer(
+          key: Key("foodcardlist"),
+          widgetList: [
+            ...List.generate(
+              _pizzaList.length,
+              (index) => FoodCard(
+                pizza: _pizzaList[index],
+              ),
+            )
+          ],
+        );
       },
     );
   }

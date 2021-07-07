@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomInfoContainer extends StatelessWidget {
+  final Key? key;
   final Widget? headerWidget;
   final List<Widget> widgetList;
 
-  CustomInfoContainer({required this.widgetList, this.headerWidget});
+  CustomInfoContainer({required this.widgetList, this.headerWidget, this.key});
 
   @override
   Widget build(BuildContext context) {
