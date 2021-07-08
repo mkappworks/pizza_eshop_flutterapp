@@ -1,16 +1,44 @@
-# pizza_eshop_flutterapp
+# Pizza Delivery App
 
-A new Flutter project.
+Flutter Frontend for a Pizza Delivery App using GetX state and route mangament.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Make sure flutter is installed!!
 
-A few resources to get you started if this is your first Flutter project:
+## Install
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+    $ git clone https://github.com/mkappworks/pizza_eshop_flutterapp.git
+    $ cd pizza_eshop_flutterapp
+    $ flutter pub get
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running the project
+
+    $ flutter run 
+
+## Simple build for production
+
+  follow steps in :  https://flutter.dev/docs/deployment/android
+
+## Project Structure
+
+The folder structure of this app is explained below:
+
+| Name               | Description                                              |
+| ------------------ | -------------------------------------------------------- |
+| **github**   | Contains CI/CD commands                        |
+| **assets**   | Contains all app assets such as images and test data                           |
+| **lib**            | Contains source code that will be compiled               |
+| **test**            | Contains all unit and widget tests            |
+| **src/controller** | Contains all GetX controller classes and respective service or utility helper classes                             |
+| **src/extension**     | Contains all enums and extension used by the app |
+| **src/model**      | Contain data access models used by the app |
+| **src/utilities**      | Contains the general utilities such as constants, route map etc      |
+| **src/views**      | Contains all the UI elements. Separate into different screens and within which contains reusable component widgets         |
+| **pubspec.yaml**   | Contains pub dependencies as well as     |
+
+## App Preview
+
+![Untitled](https://user-images.githubusercontent.com/76746881/124842332-ee480b80-dfac-11eb-9286-bcb6f585dd8d.png)
+
+

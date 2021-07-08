@@ -1,0 +1,27 @@
+[
+    {
+      "_id":"1",
+      "title": "Cheese",
+     "image": "assets/images/cheese.png",
+      "price": 1.00
+    },
+    {
+      "_id":"2",
+      "title": "Bacon",
+      "image": "assets/images/bacon.png",
+       "price": 1.50
+    },
+    {
+      "_id":"3",
+      "title": "Bellpepper",
+      "image": "assets/images/bellpepper.png",
+       "price": 0.50
+    },
+    {
+      "_id":"4",
+      "title": "Chicken",
+      "image": "assets/images/chicken.png",
+       "price": 1.50
+    }
+  ]
+  
